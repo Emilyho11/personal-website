@@ -1,8 +1,15 @@
-import React from 'react'
+import React from 'react';
+import ContentContainer from '../components/ContentContainer';
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <>
+      
+      <ContentContainer>
+        <h1 className='text-dark_blue'>Hello, Bonjour, I'm Emily!</h1>
+        <p>Welcome to my website!</p>
+      </ContentContainer>
+    </>
   )
 }
 
