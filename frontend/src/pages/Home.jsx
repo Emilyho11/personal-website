@@ -32,10 +32,10 @@ const Home = () => {
         <h1 className='pt-10'>Hello, Bonjour,<br/>I'm Emily!</h1>
         <h2 className='pt-10'>Welcome to my Personal Website!</h2>
       </div>
-      <ContentContainer className='text-dark_blue bg-light_blue p-10'>
+      <ContentContainer className='text-dark_blue bg-light_blue py-20 px-32'>
         <div className='lg:flex xl:gap-32 lg:gap-16'>
           <div>
-            <h2 className='pt-10'>About Me</h2>
+            <h2>About Me</h2>
             <p className='pt-5'>
               Hello! As a dedicated and hard-working UofT Computer Science
               Co-op student, I excel in leading technical discussions with
@@ -93,7 +93,8 @@ const Home = () => {
           <li>Business French</li>
         </ul>
 
-        <h3 className='pt-5'>Skills</h3>
+        <hr className="my-10 border-t-1 border-black" />
+        <h3>Skills</h3>
         <h4 className='pt-5'>Programming Languages:</h4>
         <p>Python, Java, C, SQL, HTML, CSS, JavaScript, Linux</p>
         <h4 className='pt-5'>Tools, Frameworks, Databases:</h4>
@@ -105,7 +106,6 @@ const Home = () => {
         <h4 className='pt-5'>Languages:</h4>
         <p>French and English (Bilingual Proficiency)</p>
 
-        <hr className="my-10 border-t-1 border-black" />
       </ContentContainer>
       <ContactMe />
     </>
