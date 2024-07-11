@@ -6,8 +6,8 @@ const Home = () => {
     <>
       
       <ContentContainer>
-        <h1 className='text-dark_blue'>Hello, Bonjour, I'm Emily!</h1>
-        <p>Welcome to my website!</p>
+        <h1>Hello, Bonjour, I'm Emily!</h1>
+        <p className='text-dark_blue'>Welcome to my website!</p>
       </ContentContainer>
     </>
   )
