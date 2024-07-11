@@ -10,17 +10,19 @@ const Navbar = () => {
     { to: '/contact', text: 'Contact Me' }
   ];
   return (
-		<div className="mr-4 flex gap-4">
-			{myLinks.map((link, index) => (
-				<NavLink key={index} to={link.to} style={{ color: 'dark_blue' }}className={({ isActive }) =>
-				[
-				  	!isActive ? "active" : "font-bold underline", 
-				].join(" ")
-			  	}>
-					{link.text}
-				</NavLink>
+		<div className="header w-full h-[60px] bg-dark_blue">
+			<div className="m-4 flex absolute top-0 right-0 gap-14 text-lg">
+				{myLinks.map((link, index) => (
+					<NavLink key={index} to={link.to} style={{ color: '#EBF1F5' }}className={({ isActive }) =>
+					[
+						!isActive ? "active" : "font-bold underline", 
+					].join(" ")
+					}>
+						{link.text}
+					</NavLink>
 
-			))}
+				))}
+			</div>
 		</div>
 	);
 }
