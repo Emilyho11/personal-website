@@ -1,0 +1,49 @@
+import React, { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+
+const Slideshow = ( {images, ratio} ) => {
+
+  const [index, setIndex] = useState(0);
+  const nextSlide = () => {
+    setIndex((index + 1) % images.length);
+  }
+  const prevSlide = () => {
+    setIndex((index - 1 + images.length) % images.length);
+  }
+
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     nextSlide();
+  //   }, 5000);
+
+  //   return () => clearInterval(interval);
+  // }, [index]);
+
+  return (
+		<div className="flex flex-col items-center">
+      <div className="relative w-full md:max-w-[800px]">
+        <img
+          src={images[index]}
+          alt="Image Slideshow"
+          className="w-full h-auto lg:max-h-[450px] object-cover transition-opacity duration-500 border border-slate-400"
+          style={{ aspectRatio: {ratio} }}
+        />
+        <button
+          onClick={prevSlide}
+          className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-dark_blue hover:bg-zinc-600 rounded p-2 -ml-9"
+        >
+          <FontAwesomeIcon icon={faAngleLeft} className="text-3xl text-back_light_blue" />
+        </button>
+        <button
+          onClick={nextSlide}
+          className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-dark_blue hover:bg-zinc-600 rounded p-2 -mr-9"
+        >
+          <FontAwesomeIcon icon={faAngleRight} className="text-3xl text-back_light_blue" />
+        </button>
+      </div>
+    </div>
+	);
+}
+
+export default Slideshow
