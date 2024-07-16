@@ -21,7 +21,7 @@ const Slideshow = ( {images, ratio} ) => {
   // }, [index]);
 
   return (
-		<div className="flex flex-col items-center">
+		<div className="flex flex-col items-center px-4">
       <div className="relative w-full md:max-w-[800px]">
         <img
           src={images[index]}
@@ -31,13 +31,13 @@ const Slideshow = ( {images, ratio} ) => {
         />
         <button
           onClick={prevSlide}
-          className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-dark_blue hover:bg-zinc-600 rounded p-2 -ml-9"
+          className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-dark_blue hover:bg-zinc-600 rounded p-1 -ml-9"
         >
           <FontAwesomeIcon icon={faAngleLeft} className="text-3xl text-back_light_blue" />
         </button>
         <button
           onClick={nextSlide}
-          className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-dark_blue hover:bg-zinc-600 rounded p-2 -mr-9"
+          className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-dark_blue hover:bg-zinc-600 rounded p-1 -mr-9"
         >
           <FontAwesomeIcon icon={faAngleRight} className="text-3xl text-back_light_blue" />
         </button>
