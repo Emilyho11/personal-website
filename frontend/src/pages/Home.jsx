@@ -30,7 +30,7 @@ const Home = () => {
         backgroundImage: `url(${musicBg})`,
         boxShadow: '0px 6px 8px rgba(0, 0, 0, 0.3)'}}>
         <h1 className='pt-10'>Hello, Bonjour,<br/>I'm Emily!</h1>
-        <h2 className='pt-10'>Welcome to my Personal Website!</h2>
+        <h2 className='pt-10 font-serif'>Welcome to my Personal Website!</h2>
       </div>
       <ContentContainer className='text-dark_blue bg-light_blue py-20 px-32'>
         <div className='lg:flex xl:gap-32 lg:gap-16'>
