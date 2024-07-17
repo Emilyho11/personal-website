@@ -3,6 +3,7 @@ import ContentContainer from '../components/ContentContainer'
 import Slideshow from '../components/Slideshow.jsx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 import PrescriberPage from '../assets/images/healthcare_app/prescriber_page.jpg';
 import GreenResources from '../assets/images/healthcare_app/green_resources.jpg';
@@ -14,6 +15,11 @@ import PrescriberAccount from '../assets/images/healthcare_app/prescriber_accoun
 import PatientAccount from '../assets/images/healthcare_app/patient_account.jpg';
 import NewPatientAccount from '../assets/images/healthcare_app/new_patient_account.jpg';
 import NewPrescriberAccount from '../assets/images/healthcare_app/new_prescriber_account.jpg';
+
+import LosePage from '../assets/images/assembly_project/lose.png';
+import WinPage from '../assets/images/assembly_project/win.png';
+import MainMenu from '../assets/images/assembly_project/main_menu.png';
+import PlatformGame from '../assets/images/assembly_project/platform_game.png';
 
 const Projects = () => {
   const [visibleDescriptions, setVisibleDescriptions] = useState({});
@@ -28,8 +34,11 @@ const Projects = () => {
   const projectData = [
     {
       name: 'Healthcare Web Application',
-      techStack: 'Microservices, CI/CD, MongoDB, React.JS, Node.JS, Express.JS, Python, Flask, GitHub, GitHub Actions, REST APIs, Postman, Jira, Figma',
+      gitHub: 'https://github.com/mjsflames/c01w24-project-RxValidators',
+      youtube: 'https://www.youtube.com/watch?v=i3gYOHE-1Qc',
+      techStack: 'Microservices, CI/CD, MongoDB, React.JS, Node.JS, Express.JS, Python, Flask, GitHub, GitHub Actions, REST APIs, Agile Software Development, Postman, Jira, Figma',
       overallDescription: 'Healthcare web application for the PaRx Foundation Company to manage doctors’ prescriptions and promote active lifestyles.',
+      date: 'January 2024 - March 2024',
       description: [
         'Designed and developed a full-stack application using a microservice architecture, MongoDB, Express.js, React.js, and Node.js',
         'Used Python and Flask to generate PDFs and web scrape university sites for doctor verification, saving 30 hours of employee workload per week',
@@ -52,17 +61,78 @@ const Projects = () => {
     },
     {
       name: 'Robotic Arm Drawing Automation',
-      techStack: 'Python, C++, Robotic Arm',
-      overallDescription: 'Healthcare web application for the PaRx Foundation Company to manage doctors’ prescriptions.',
-      description: 'Automation Project for Crystal Claire Cosmetics Inc. created in Python to generate C++ code for the robotic arm to draw any image the user wants.',
+      techStack: 'C++, Python, Robotic Arm',
+      overallDescription: 'Developed a Python program that automatically generates C++ code for robotic arms to produce complex designs, saving developer effort and time of writing 100,000+ lines of code from months to 2 minutes.',
+      date: 'August 2023 - August 2023',
+      description: [
+        'This project gets the user to draw something (simple or very detailed), which then writes C++ code for robotic arms to draw that exact image',
+        'Completed the project within a week to present it to the CEO and managers'
+      ],
       images: [],
       ratio: '21/9'
     },
     {
       name: 'Platform Game: Pig Panic Coin Quest',
+      gitHub: 'https://github.com/Emilyho11/Pig-Panic-Coin-Quest',
+      youtube: 'https://www.youtube.com/watch?v=WIFcdk-GruE',
       techStack: 'MIPS Assembly Language, MARS Simulator',
-      overallDescription: 'Healthcare web application for the PaRx Foundation Company to manage doctors’ prescriptions.',
-      description: 'Created a platform game based on the theme of Angry Birds.',
+      overallDescription: 'This platform game is based on the theme of Angry birds. The goal of the game is to try and collect all the coins without getting hit by the enemy (pigs) to move to the next level! If you get hit, then you have to restart from the beginning. Each level will get harder to pass.',
+      date: 'April 2023 - April 2023',
+      description: [
+        'Developed a platform game in Assembly language for the MIPS processor',
+        'Utilized the MARS debugger tool to identify and troubleshoot low-level system defects',
+        'Designed a simple use of MIPS memory address with heap, stack, and code and data segments to optimize development',
+        'Effectively used modular programming alongside stack manipulation to reduce the chance of bugs and coupling'
+      ],
+      images: [
+        MainMenu,
+        WinPage,
+        LosePage,
+        PlatformGame
+      ],
+      ratio: '16/9'
+    },
+    {
+      name: 'System Monitoring Tool',
+      gitHub: 'https://github.com/Emilyho11/System-Monitoring-Tool',
+      techStack: 'Linux, C',
+      overallDescription: 'Engineered a system monitoring tool in C for Unix/Linux environments, providing real-time insights into system performance metrics.',
+      date: 'January 2023 - January 2023',
+      description: [
+        'Conducted thorough evaluations of system performance, ensuring accuracy and reliability in reporting metrics and contributing to a 99% assessment coverage',
+        'Generated graphical representations of memory and CPU usage, enhancing data visualization for improved analysis',
+        'Documented the development process and provided user support to facilitate seamless adoption and utilization'
+      ],
+      images: [],
+      ratio: '21/9'
+    },
+    {
+      name: 'Android App: University Timetable Generator',
+      gitHub: 'https://github.com/arnavp103/UTT',
+      techStack: 'Java, Android Studio, Agile Software Development, NoSQL, GitHub, Jira, Model-View-Presenter (MVP)',
+      overallDescription: 'Developed an Android app for students to automatically plan and forecast courses required to graduate.',
+      date: 'December 2022 - December 2022',
+      description: [
+        'Developed an Android app for students to automatically plan and forecast courses required to graduate based on the Model View Presenter architecture and Agile-Scrum methodologies',
+        'Designed and developed an intuitive, visually appealing, and responsive (UX) frontend using Java and Android Studio, increasing user engagement by 75%',
+        'Developed backend services with Firebase, a cloud-hosted NoSQL database, to efficiently manage over 500 courses and 10,000 active users',
+        'Collaborated with a team of six, employing GitHub version control and JIRA to oversee user stories, sprints, and daily standups'
+      ],
+      images: [],
+      ratio: '21/9'
+    },
+    {
+      name: 'Game Carnival',
+      gitHub: 'https://github.com/Emilyho11/Mini-Game-Carnival',
+      youtube: 'https://www.youtube.com/watch?v=6X7TtgV8kBI',
+      techStack: 'Object-Oriented Programming (OOP), Software Design Patterns, Python, Pygame',
+      overallDescription: 'Developed small interactive games for children to play and learn!',
+      date: 'May 2021 - June 2021',
+      description: [
+        'Developed an interactive and educational game for children using Pygame and Python',
+        'Creatively planned and designed the game using software design patterns and object-oriented programming',
+        'The game contains a set of small games that the user can choose from: Maze Game, Guessing Game on Animals and Disney Characters, educational game about our Solar System, educational Apple-picking game about mathematical operations, and a Flappy Bird game that randomly changes avatars',
+      ],
       images: [],
       ratio: '21/9'
     }
@@ -72,34 +142,49 @@ const Projects = () => {
     <ContentContainer>
       {projectData.map((project, index) => (
         <div key={index} className='bg-light_blue text-dark_blue mb-8 shadow-md'>
-          <h2 className='bg-dark_blue tracking-widest text-back_light_blue text-center py-4'>{project.name}</h2>
-            <div className='gap-20 justify-center p-10'>
-              <div>
-                <h3 className='text-xl font-bold tracking-wider'>Tech Stack:</h3>
-                <p className='my-2 '>{project.techStack}</p>
-                <br/>
-                <h3 className='text-xl font-bold tracking-wider'>Description:</h3>
-                <p className='text-lg my-2'>{project.overallDescription}</p>
-                <button
-                  className='pt-2 pb-6 mt-4 rounded flex items-center text-xl hover:text-slate-400'
-                  onClick={() => toggleDescription(index)}
-                >
-                  {visibleDescriptions[index] ? 'Hide Details': 'Show Details'}
-                  <FontAwesomeIcon icon={visibleDescriptions[index] ? faChevronUp : faChevronDown} className='ml-2 text-xl' />
-                </button>
-                {visibleDescriptions[index] && (
-                  Array.isArray(project.description) ? (
-                  <ul className='pb-10 text-lg list-disc pl-8'>
-                    {project.description.map((point, descriptionIndex) => (
-                      <li key={descriptionIndex} className='pl-2'>{point}</li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p className='pt-6 pb-10 text-lg'>{project.description}</p>
-                )
+          <div className='flex justify-between bg-dark_blue text-back_light_blue py-4'>
+            <h2 className='pl-8 flex-1 tracking-wide text-center'>{project.name}</h2>
+            <div className='pt-2 space-x-4 pr-8 flex text-3xl'>
+              {project.gitHub && (
+                <a href={project.gitHub} target="_blank" rel="noopener noreferrer">
+                  <FontAwesomeIcon icon={faGithub} />
+                </a>
               )}
-              </div>
-              <Slideshow images={project.images} ratio={project.ratio} />
+              {project.youtube && (
+                <a href={project.youtube} target="_blank" rel="noopener noreferrer">
+                  <FontAwesomeIcon icon={faYoutube} />
+                </a>
+              )}
+            </div>
+          </div>
+          <div className='gap-20 justify-center p-10 lg:px-16'>
+            <div>
+              <h3 className='text-xl font-bold tracking-wider'>Tech Stack:</h3>
+              <p className='my-2 text-lg'>{project.techStack}</p>
+              <br/>
+              <h3 className='text-xl font-bold tracking-wider'>Description:</h3>
+              <p className='text-lg my-2'>{project.overallDescription}</p>
+              <button
+                className='pt-2 pb-6 mt-4 rounded flex items-center text-xl hover:text-links'
+                onClick={() => toggleDescription(index)}
+              >
+                {visibleDescriptions[index] ? 'Hide Details': 'Show Details'}
+                <FontAwesomeIcon icon={visibleDescriptions[index] ? faChevronUp : faChevronDown} className='ml-2 text-xl' />
+              </button>
+              {visibleDescriptions[index] && (
+                Array.isArray(project.description) ? (
+                <ul className='pb-10 text-lg list-disc pl-8'>
+                  <p className='pb-4'>{project.date}</p>
+                  {project.description.map((point, descriptionIndex) => (
+                    <li key={descriptionIndex} className='pl-2'>{point}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p className='pt-6 pb-10 text-lg'>{project.description}</p>
+              )
+            )}
+            </div>
+            <Slideshow images={project.images} ratio={project.ratio} />
           </div>
         </div>
       ))}
