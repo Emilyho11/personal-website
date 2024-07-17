@@ -23,7 +23,7 @@ const Navbar = () => {
             to={link.to}
             className={({ isActive }) =>
               [
-                'text-[#EBF1F5] hover:text-slate-500',
+                'text-[#EBF1F5] hover:text-links',
                 !isActive ? 'active' : 'font-bold underline',
               ].join(' ')
             }
@@ -33,8 +33,8 @@ const Navbar = () => {
         ))}
       </div>
       <div className="md:hidden flex items-center absolute top-0 right-0 m-4">
-        <button onClick={() => setIsOpen(!isOpen)} className="text-light_blue hover:text-slate-500 focus:outline-none">
-          <FontAwesomeIcon icon={faBars} className="text-2xl text-light_blue hover:text-slate-500" />
+        <button onClick={() => setIsOpen(!isOpen)} className="text-light_blue hover:text-links focus:outline-none">
+          <FontAwesomeIcon icon={faBars} className="text-2xl text-light_blue hover:text-links" />
         </button>
       </div>
       {isOpen && (
@@ -47,7 +47,7 @@ const Navbar = () => {
               className={({ isActive }) =>
                 [
                   !isActive ? 'active' : 'font-bold underline',
-                  'py-2 px-4 text-light_blue hover:text-slate-500'
+                  'py-2 px-4 text-light_blue hover:text-links'
                 ].join(' ')
               }
             >
