@@ -7,7 +7,8 @@ export default {
 				dark_blue: "#2A2F4F",
 				back_light_blue: "#D0E4F3",
 				light_blue: "#EBF1F5",
-				gray: "#D5DADE"
+				gray: "#D5DADE",
+				links: "#54a4fa",
 			},
 			width: {
 				"1/8": "12.5%",
