@@ -37,18 +37,22 @@ const Home = () => {
           <div>
             <h2>About Me</h2>
             <p className='pt-5'>
-              Hello! As a dedicated and hard-working UofT Computer Science
-              Co-op student, I excel in leading technical discussions with
-              senior software engineers. With previous work experience as a
-              Software Engineer, DevOps Engineer, and Site Reliability Engineer,
-              I can quickly acquire new skills and easily adapt to new challenges
-              and assignments. I am committed to getting work done beyond
-              management expectations and am an excellent team player.<br/><br/>
-            
-              With a passion for technology, innovation, and automation,
-              I always look forward to meeting new people and being part of a team.
-              Feel free to connect and reach out!
-              </p>
+              Hello! I am a dedicated and hard-working Computer Science Co-op
+              student at the University of Toronto, specializing in Software
+              Engineering with Management. I excel in leading technical
+              discussions, quickly acquiring new skills, and adapting to
+              challenges.
+              <br/><br/>
+              My experience includes roles as a Site Reliability Engineer
+              at Clio, a DevOps Engineer at Arctiq and a Software Engineer at
+              Crystal Claire Cosmetics, where I developed automated solutions
+              and optimized systems. I have led projects such as a Healthcare
+              Web Application and an Android Timetable Generator App, improving
+              efficiency and user engagement. Proficient in Python, Java, C,
+              React.js, and MS Azure, I thrive in Agile environments and am
+              passionate about technology, innovation, and teamwork.<br/><br/>
+              Feel free to reach out!
+            </p>
           </div>
           <img src={ProfessionalPic} alt='emily-professional-pic' className='w-[250px] h-full mt-10 mx-auto'/>
         </div>
