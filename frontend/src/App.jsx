@@ -2,7 +2,7 @@ import './App.css'
 import Navbar from './components/Navbar.jsx'
 import Home from './pages/Home.jsx'
 import Projects from './pages/Projects.jsx'
-import Hobbies from './pages/Hobbies.jsx'
+import HobbiesGame from './pages/HobbiesGame.jsx'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from './components/Footer.jsx'
 
@@ -15,7 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/hobbies" element={<Hobbies />} />
+          <Route path="/hobbiesgame" element={<HobbiesGame />} />
         </Routes>
       </BrowserRouter>
       <Footer />
