@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ContentContainer from '../components/ContentContainer';
 import MusicNote1 from '../assets/images/1musicnote.png';
 import HobbyPopup from '../components/HobbyPopup';
+import Piano from '../assets/images/hobbies/piano.jpg';
 
 const HobbiesGame = () => {
   const [position, setPosition] = useState({ top: 0, left: 0 });
@@ -46,7 +47,7 @@ const HobbiesGame = () => {
               <HobbyPopup hobby={hobby} />
             </div>
         ))} */}
-        <HobbyPopup hobby='piano' description='I like this hobby' date='2006-present' image=''/>
+        <HobbyPopup hobby='Piano' description='I like this hobby' date='2006-present' image={Piano}/>
         
         {visible && (
           <button
