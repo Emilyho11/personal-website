@@ -1,0 +1,57 @@
+name: React Dev Server
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: 'Start or Stop the server'
+        required: true
+        default: 'start'
+        type: choice
+        options:
+          - start
+          - stop
+
+jobs:
+  run-server:
+    if: github.event.inputs.action == 'start'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Start React Dev Server
+        run: npm run dev
+
+  stop-server:
+    if: github.event.inputs.action == 'stop'
+    runs-on: ubuntu-latest
+    steps:
+      - name: List running workflows
+        id: list-workflows
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const workflows = await github.actions.listWorkflowRuns({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'react-dev.yml',
+              status: 'in_progress'
+            });
+            return workflows.data.workflow_runs.map(run => run.id);
+
+      - name: Cancel running workflows
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const workflow_ids = ${steps.list-workflows.outputs};
+            for (const id of workflow_ids) {
+              await github.actions.cancelWorkflowRun({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                run_id: id
+              });
+            }
