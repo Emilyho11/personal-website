@@ -47,7 +47,25 @@ const HobbiesGame = () => {
               <HobbyPopup hobby={hobby} />
             </div>
         ))} */}
-        <HobbyPopup hobby='Piano' description='I like this hobby' date='2006-present' image={Piano}/>
+        <HobbyPopup
+          hobby='Piano'
+          description='Piano is one of my favorite hobbies since I was little.
+          I have been taking lessons at the age of 6, and I am continuing my playing to this day.
+          I enjoy performing in front of others at school concerts, recitals, and retirement homes,
+          as seeing others smile makes me happy. Playing piano not only brings me joy, but it
+          helps me relax during stressful times.
+
+          Some Songs I play:
+          Endless Love - Lionel Richie and Diana Ross
+          Night Changes - One Direction
+          Right Here Waiting
+          What a Wonderful World
+          Moon Represents my Heart - Teresa Teng
+          I Want It That Way - Backstreet Boys
+          River Flows In You - Yiruma
+          Colors of the Wind - Pocahontas (Disney)'
+          date='2006-present'
+          image={Piano}/>
         
         {visible && (
           <button
