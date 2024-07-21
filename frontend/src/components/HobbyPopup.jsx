@@ -4,10 +4,10 @@ import ContentContainer from './ContentContainer';
 const HobbyPopup = ({ hobby, description, date, image }) => {
   return (
     <div className="lg:px-16 p-10 bg-dark_blue text-back_light_blue">
-        <h3 className="text-2xl pb-4">{hobby}</h3>
+        <h3 className="text-2xl">{hobby}</h3>
+        <p className="text-m font-semibold">{date}</p>
         <div className='flex gap-6 items-start'>
-            <div className='flex-1'>
-                <p className="text-lg font-semibold">{date}</p>
+            <div className='flex-1 pt-4'>
                 <p className="mt-2">{description}</p>
             </div>
             {image && (
