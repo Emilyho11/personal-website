@@ -22,7 +22,7 @@ jobs:
 
       - name: Start React Dev Server
         run: |
-          cd ..  
+          cd frontend
           npm run dev
 
   stop-server:
