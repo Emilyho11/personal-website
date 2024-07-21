@@ -20,10 +20,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Install dependencies
+        run: npm install
+        working-directory: frontend
+
       - name: Start React Dev Server
-        run: |
-          cd frontend
-          npm run dev
+        run: npm run dev
+        working-directory: frontend
 
   stop-server:
     if: github.event.inputs.action == 'stop'
