@@ -19,9 +19,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        
+
       - name: Start React Dev Server
-        run: npm run dev
+        run: |
+          cd ..  
+          npm run dev
 
   stop-server:
     if: github.event.inputs.action == 'stop'
