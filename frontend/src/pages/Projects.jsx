@@ -17,6 +17,15 @@ import PatientAccount from '../assets/images/healthcare_app/patient_account.jpg'
 import NewPatientAccount from '../assets/images/healthcare_app/new_patient_account.jpg';
 import NewPrescriberAccount from '../assets/images/healthcare_app/new_prescriber_account.jpg';
 
+// Robotic Arm Images
+import ThankyouCCC from '../assets/images/robotic_arm/thankyou_ccc.jpg';
+import ThankyouCCCScreen from '../assets/images/robotic_arm/thankyou_ccc_screen.jpg';
+import Beach from '../assets/images/robotic_arm/beach.jpg';
+import BeachScreen from '../assets/images/robotic_arm/beach_screen.jpg';
+import Code from '../assets/images/robotic_arm/code.jpg';
+import Blueprint from '../assets/images/robotic_arm/blueprint.jpg';
+
+
 // Assembly Platform Game Images
 import LosePage from '../assets/images/assembly_project/lose.png';
 import WinPage from '../assets/images/assembly_project/win.png';
@@ -32,8 +41,19 @@ import AndroidHomePage from '../assets/images/android_app/homePageUTT.png';
 import AndroidLogin from '../assets/images/android_app/login.png';
 import Timeline from '../assets/images/android_app/timeline.png';
 
-// System Monitoring Tool
+// System Monitoring Tool Images
 import SystemMonitoringTool from '../assets/images/sysMonTool.png';
+
+// Game Carnival Images
+import SpaceGame from '../assets/images/game_carnival/space_game.png';
+import FlappyGame from '../assets/images/game_carnival/flappy_game.png';
+import ApplePicking from '../assets/images/game_carnival/apple_picking.png';
+import AnimalGuess from '../assets/images/game_carnival/animal_guess.png';
+import DisneyGuess from '../assets/images/game_carnival/disney_guess.png';
+import Maze from '../assets/images/game_carnival/maze.png';
+import CarnivalMainMenu from '../assets/images/game_carnival/main_menu.png';
+import CarnivalHome from '../assets/images/game_carnival/carnival_home.png';
+
 
 const Projects = () => {
   const [visibleDescriptions, setVisibleDescriptions] = useState({});
@@ -82,8 +102,15 @@ const Projects = () => {
         'This project gets the user to draw something (simple or very detailed), which then writes C++ code for robotic arms to draw that exact image',
         'Completed the project within a week to present it to the CEO and managers'
       ],
-      images: [],
-      ratio: '9/16'
+      images: [
+        ThankyouCCC,
+        ThankyouCCCScreen,
+        Beach,
+        BeachScreen,
+        Code,
+        Blueprint
+      ],
+      ratio: '5/6'
     },
     {
       name: 'Platform Game: Pig Panic Coin Quest',
@@ -155,8 +182,17 @@ const Projects = () => {
         'Creatively planned and designed the game using software design patterns and object-oriented programming',
         'The game contains a set of small games that the user can choose from: Maze Game, Guessing Game on Animals and Disney Characters, educational game about our Solar System, educational Apple-picking game about mathematical operations, and a Flappy Bird game that randomly changes avatars',
       ],
-      images: [],
-      ratio: '4:3'
+      images: [
+        SpaceGame,
+        FlappyGame,
+        ApplePicking,
+        AnimalGuess,
+        DisneyGuess,
+        Maze,
+        CarnivalMainMenu,
+        CarnivalHome
+      ],
+      ratio: '3/4'
     }
   ];
 
