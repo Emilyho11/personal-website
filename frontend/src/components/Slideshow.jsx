@@ -20,14 +20,40 @@ const Slideshow = ( {images, ratio} ) => {
   //   return () => clearInterval(interval);
   // }, [index]);
 
+  const getImageSizes = (ratio) => {
+    if (ratio === "9/16") {
+      return {
+        maxWidth: '350px',
+        maxHeight: '800px',
+        aspectRatio: ratio,
+      };
+    }
+    if (ratio === "21/9") {
+      return {
+        maxWidth: '800px',
+        maxHeight: '450px',
+        aspectRatio: ratio,
+      };
+    };
+    if (ratio === "1/1") {
+      return {
+        maxWidth: '700px',
+        maxHeight: '500px',
+        aspectRatio: ratio,
+      };
+    };
+  };
+
+  const imageSize = getImageSizes(ratio);
+
   return (
 		<div className="flex flex-col items-center px-4">
-      <div className="relative w-full md:max-w-[800px]">
+      <div className="relative w-full md:max-w-[800px]" style={imageSize}>
         <img
           src={images[index]}
           alt="Image Slideshow"
           className="w-full h-auto lg:max-h-[450px] object-cover transition-opacity duration-500 border border-slate-400"
-          style={{ aspectRatio: {ratio} }}
+          style={imageSize}
         />
         <button
           onClick={prevSlide}
