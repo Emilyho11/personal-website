@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
+// Healthcare Web Application Images
 import PrescriberPage from '../assets/images/healthcare_app/prescriber_page.jpg';
 import GreenResources from '../assets/images/healthcare_app/green_resources.jpg';
 import LoginPage from '../assets/images/healthcare_app/login_page.jpg';
@@ -16,10 +17,23 @@ import PatientAccount from '../assets/images/healthcare_app/patient_account.jpg'
 import NewPatientAccount from '../assets/images/healthcare_app/new_patient_account.jpg';
 import NewPrescriberAccount from '../assets/images/healthcare_app/new_prescriber_account.jpg';
 
+// Assembly Platform Game Images
 import LosePage from '../assets/images/assembly_project/lose.png';
 import WinPage from '../assets/images/assembly_project/win.png';
 import MainMenu from '../assets/images/assembly_project/main_menu.png';
 import PlatformGame from '../assets/images/assembly_project/platform_game.png';
+
+// Android App Images
+import FutureCourses from '../assets/images/android_app/addFutureCourses.png';
+import AdminAddCourses from '../assets/images/android_app/adminAddCourses.png';
+import AdminViewCourses from '../assets/images/android_app/adminViewCourses.png';
+import CoursesTaken from '../assets/images/android_app/coursesTaken.png';
+import AndroidHomePage from '../assets/images/android_app/homePageUTT.png';
+import AndroidLogin from '../assets/images/android_app/login.png';
+import Timeline from '../assets/images/android_app/timeline.png';
+
+// System Monitoring Tool
+import SystemMonitoringTool from '../assets/images/sysMonTool.png';
 
 const Projects = () => {
   const [visibleDescriptions, setVisibleDescriptions] = useState({});
@@ -69,7 +83,7 @@ const Projects = () => {
         'Completed the project within a week to present it to the CEO and managers'
       ],
       images: [],
-      ratio: '21/9'
+      ratio: '9/16'
     },
     {
       name: 'Platform Game: Pig Panic Coin Quest',
@@ -103,8 +117,8 @@ const Projects = () => {
         'Generated graphical representations of memory and CPU usage, enhancing data visualization for improved analysis',
         'Documented the development process and provided user support to facilitate seamless adoption and utilization'
       ],
-      images: [],
-      ratio: '21/9'
+      images: [SystemMonitoringTool],
+      ratio: '1/1'
     },
     {
       name: 'Android App: University Timetable Generator',
@@ -118,8 +132,16 @@ const Projects = () => {
         'Developed backend services with Firebase, a cloud-hosted NoSQL database, to efficiently manage over 500 courses and 10,000 active users',
         'Collaborated with a team of six, employing GitHub version control and JIRA to oversee user stories, sprints, and daily standups'
       ],
-      images: [],
-      ratio: '21/9'
+      images: [
+        AndroidHomePage,
+        AndroidLogin,
+        Timeline,
+        FutureCourses,
+        AdminAddCourses,
+        AdminViewCourses,
+        CoursesTaken
+      ],
+      ratio: '9/16'
     },
     {
       name: 'Game Carnival',
@@ -134,7 +156,7 @@ const Projects = () => {
         'The game contains a set of small games that the user can choose from: Maze Game, Guessing Game on Animals and Disney Characters, educational game about our Solar System, educational Apple-picking game about mathematical operations, and a Flappy Bird game that randomly changes avatars',
       ],
       images: [],
-      ratio: '21/9'
+      ratio: '4:3'
     }
   ];
 
