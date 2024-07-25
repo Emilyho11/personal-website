@@ -42,6 +42,20 @@ const Slideshow = ( {images, ratio} ) => {
         aspectRatio: ratio,
       };
     };
+    if (ratio === "3/4") {
+      return {
+        maxWidth: '800px',
+        maxHeight: '500px',
+        aspectRatio: ratio,
+      };
+    };
+    if (ratio === "5/6") {
+      return {
+        maxWidth: '500px',
+        maxHeight: '700px',
+        aspectRatio: ratio,
+      };
+    };
   };
 
   const imageSize = getImageSizes(ratio);
