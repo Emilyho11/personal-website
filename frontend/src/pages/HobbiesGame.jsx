@@ -8,8 +8,6 @@ const HobbiesGame = () => {
   const [position, setPosition] = useState({ top: 0, left: 0 });
   const [visible, setVisible] = useState(true);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  // const hobbies = ['Reading', 'Gaming', 'Hiking', 'Cooking', 'Traveling', 'Photography'];
-  const hobby = 'Piano';
 
   useEffect(() => {
     const randomizePosition = () => {
