@@ -2,7 +2,7 @@ import './App.css'
 import Navbar from './components/Navbar.jsx'
 import Home from './pages/Home.jsx'
 import Projects from './pages/Projects.jsx'
-import HobbiesGame from './pages/HobbiesGame.jsx'
+import Hobbies from './pages/Hobbies.jsx'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from './components/Footer.jsx'
 import { useEffect } from 'react'
@@ -42,7 +42,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/hobbiesgame" element={<HobbiesGame />} />
+          <Route path="/hobbies" element={<Hobbies />} />
         </Routes>
       </BrowserRouter>
       <Footer />
