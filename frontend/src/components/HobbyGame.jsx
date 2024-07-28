@@ -4,7 +4,7 @@ import MusicNote1 from '../assets/images/1musicnote.png';
 import HobbyPopup from '../components/HobbyPopup';
 import Piano from '../assets/images/hobbies/piano.jpg';
 
-const HobbiesGame = () => {
+const HobbyGame = () => {
   const [position, setPosition] = useState({ top: 0, left: 0 });
   const [visible, setVisible] = useState(true);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -36,8 +36,7 @@ const HobbiesGame = () => {
   };
 
   return (
-    <>
-      <ContentContainer>
+    <ContentContainer>
         <h2>Try to catch as many music notes as you can to see all my hobbies and extracurricular activities!</h2>
         
         {/* {hobbies.map((hobby, index) => (
@@ -45,25 +44,6 @@ const HobbiesGame = () => {
               <HobbyPopup hobby={hobby} />
             </div>
         ))} */}
-        <HobbyPopup
-          hobby='Piano'
-          description='Piano is one of my favorite hobbies since I was little.
-          I have been taking lessons at the age of 6, and I am continuing my playing to this day.
-          I enjoy performing in front of others at school concerts, recitals, and retirement homes,
-          as seeing others smile makes me happy. Playing piano not only brings me joy, but it
-          helps me relax during stressful times.
-
-          Some Songs I play:
-          Endless Love - Lionel Richie and Diana Ross
-          Night Changes - One Direction
-          Right Here Waiting
-          What a Wonderful World
-          Moon Represents my Heart - Teresa Teng
-          I Want It That Way - Backstreet Boys
-          River Flows In You - Yiruma
-          Colors of the Wind - Pocahontas (Disney)'
-          date='2006-present'
-          image={Piano}/>
         
         {visible && (
           <button
@@ -78,15 +58,31 @@ const HobbiesGame = () => {
         {isPopupOpen && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
             <div className="bg-white p-8 rounded">
-              <h3>Popup Content</h3>
-              <p>Here you can put information about hobbies or other content.</p>
-              <button onClick={closePopup} className="mt-4 px-4 py-2 bg-blue-500 text-white rounded">Close</button>
+              <HobbyPopup
+              hobby='Piano'
+              description='Piano is one of my favorite hobbies since I was little.
+              I have been taking lessons at the age of 6, and I am continuing my playing to this day.
+              I enjoy performing in front of others at school concerts, recitals, and retirement homes,
+              as seeing others smile makes me happy. Playing piano not only brings me joy, but it
+              helps me relax during stressful times.
+
+              Some Songs I play:
+              Endless Love - Lionel Richie and Diana Ross
+              Night Changes - One Direction
+              Right Here Waiting
+              What a Wonderful World
+              Moon Represents my Heart - Teresa Teng
+              I Want It That Way - Backstreet Boys
+              River Flows In You - Yiruma
+              Colors of the Wind - Pocahontas (Disney)'
+              date='2006-present'
+              image={Piano}/>
+              <button onClick={closePopup} className="mt-4 px-4 py-2 bg-dark_blue hover:bg-slate-600 text-white rounded">Close</button>
             </div>
           </div>
         )}
       </ContentContainer>
-    </>
-  );
+  )
 }
 
-export default HobbiesGame;
+export default HobbyGame
