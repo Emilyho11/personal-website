@@ -28,6 +28,14 @@ export const HobbyList = () => {
       ],
       date: '2006-present',
       image: Piano
+    },
+    {
+      hobbyName: 'Wushu (Kung Fu)',
+      description: 'I was part of the Wushu team, participating in competitions, performances, Toronto parades, and many more. We practice acrobatics, and use weapons such as swords, staffs, and spears. I have been practicing Wushu for over 10 years, and it has taught me discipline, respect, and perseverance.',
+      extraInfo: [
+      ],
+      date: '2014-present',
+      image: Piano
     }
   ]
 
