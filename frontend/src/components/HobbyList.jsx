@@ -36,6 +36,14 @@ export const HobbyList = () => {
       ],
       date: '2014-present',
       image: Piano
+    },
+    {
+      hobbyName: 'Cheerleading Team',
+      description: 'Particpated in the uoft cheer team.',
+      extraInfo: [
+      ],
+      date: '2023-2024',
+      image: Piano
     }
   ]
 
