@@ -44,6 +44,14 @@ export const HobbyList = () => {
       ],
       date: '2023-2024',
       image: Piano
+    },
+    {
+      hobbyName: 'Flute',
+      description: 'I was part of concert band from grade 6 to grade 10, playing the flute. I enjoyed playing in the band, and performing at school concerts, music competitions, and music festivals. I have played many pieces, such as "The Lion King", "Pirates of the Caribbean", and "The Incredibles".',
+      extraInfo: [
+      ],
+      date: '2014-2019',
+      image: Piano
     }
   ]
 
