@@ -1,5 +1,10 @@
 import React, { useState } from 'react'
 import Piano from '../assets/images/hobbies/piano.jpg';
+import DragonBoat from '../assets/images/hobbies/dragonBoat.jpg';
+import WushuCompetition from '../assets/images/hobbies/wushu_competition.jpg';
+import Flute from '../assets/images/hobbies/kiss_the_rain_flute.jpg';
+import CheerPerformance from '../assets/images/hobbies/performance.jpg';
+import Swimming from '../assets/images/hobbies/swimming.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
@@ -18,16 +23,16 @@ export const HobbyList = () => {
         'River Flows In You - Yiruma',
         'Colors of the Wind - Pocahontas (Disney)',
       ],
-      date: '2006-present',
+      date: '2009-present',
       image: Piano
     },
     {
       hobbyName: 'Dragon Boat Team',
-      description: 'I was part of the Dragon Boat team at Crystal Claire Cosmetics Inc. during my 1st co-op term as a Software Engineer. We want GOLD at the Toronto Dragon Boat Festival! It was a great experience to work with my colleagues outside of the office and to build a strong team spirit.',
+      description: 'I was part of the Dragon Boat team at Crystal Claire Cosmetics Inc. during my 1st co-op term as a Software Engineer. We won GOLD at the Toronto Dragon Boat Festival! It was a great experience to work with my colleagues outside of the office and to build a strong team spirit.',
       extraInfo: [
       ],
-      date: '2006-present',
-      image: Piano
+      date: '2023',
+      image: DragonBoat
     },
     {
       hobbyName: 'Wushu (Kung Fu)',
@@ -35,15 +40,15 @@ export const HobbyList = () => {
       extraInfo: [
       ],
       date: '2014-present',
-      image: Piano
+      image: WushuCompetition
     },
     {
       hobbyName: 'Cheerleading Team',
-      description: 'Particpated in the uoft cheer team.',
+      description: 'Particpated in the uoft cheer team, and performed at various events, such as basketball games, and performances. It was a great experience to work with my teammates, and to build a strong team spirit.',
       extraInfo: [
       ],
       date: '2023-2024',
-      image: Piano
+      image: CheerPerformance
     },
     {
       hobbyName: 'Flute',
@@ -51,7 +56,15 @@ export const HobbyList = () => {
       extraInfo: [
       ],
       date: '2014-2019',
-      image: Piano
+      image: Flute
+    },
+    {
+      hobbyName: 'Swimming',
+      description: 'I have been swimming and taking swimming lessons since I was 6, and I aimed to get my lifeguard certifications. I received my Bronze Medallion, but after that, COVID hit and prevented me from completing it. However, to this day, swimming is still a hobby I enjoy.',
+      extraInfo: [
+      ],
+      date: '2009-2019',
+      image: Swimming
     }
   ]
 
