@@ -102,7 +102,7 @@ const Home = () => {
         <h4 className='pt-5'>Programming Languages:</h4>
         <p>Python, Java, C, SQL, HTML, CSS, JavaScript, Linux</p>
         <h4 className='pt-5'>Tools, Frameworks, Databases:</h4>
-        <p>GitHub, MS Azure, Terraform, Docker, JIRA, React.js, Node.js, MongoDB, MS SQL Server</p>
+        <p>GitHub, GCP, MS Azure, Terraform, Docker, JIRA, SpringBoot, React.js, Node.js, MongoDB, MS SQL Server</p>
         <h4 className='pt-5'>Development Practices:</h4>
         <p>Agile Software Development (Scrum), CI/CD, REST APIs, Application Security</p>
         <h4 className='pt-5'>Soft Skills:</h4>
