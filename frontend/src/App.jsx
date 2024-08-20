@@ -5,7 +5,6 @@ import Projects from './pages/Projects.jsx'
 import Hobbies from './pages/Hobbies.jsx'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from './components/Footer.jsx'
-import { useEffect } from 'react'
 
 function App() {
 

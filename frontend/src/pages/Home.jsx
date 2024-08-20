@@ -58,57 +58,56 @@ const Home = () => {
         </div>
 
         <hr className="my-10 border-t-1 border-black" />
-        <h2>Resume</h2>
-        <h3 className='pt-5'>Education</h3>
-        <div className="flex justify-between">
-          <p className="pt-5">University of Toronto<br/>
-            Honors, Bachelor of Science<br/>
-            Computer Science Co-op
-          </p>
-          <p className="text-right">2021 - 2025</p>
-        </div>
-
-        <hr className="my-10 border-t-1 border-black" />
-        <h3>Work Experience</h3>
-        {workExperiences.map((experience, index) => (
-          <div key={index} className="flex justify-between">
-            <p className="pt-5">{experience.title}<br/>
-              {experience.company}
+        <div id='ResumeSection'>
+          <h2>Resume</h2>
+          <h3 className='pt-5'>Education</h3>
+          <div className="flex justify-between">
+            <p className="pt-5">University of Toronto<br/>
+              Honors, Bachelor of Science<br/>
+              Computer Science Co-op
             </p>
-            <p className="text-right">{experience.date}</p>
+            <p className="text-right">2021 - 2025</p>
           </div>
-        ))}
-
-        <hr className="my-10 border-t-1 border-black" />
-        <h3>Relevant Courses</h3>
-        <ul className="list-disc pl-5 pt-5">
-          <li>Introduction to Computer Science 1 & 2</li>
-          <li>Software Engineering</li>
-          <li>Software Design</li>
-          <li>Operating Systems</li>
-          <li>Databases</li>
-          <li>Software Tools and Systems Programming</li>
-          <li>Computer Organization</li>
-          <li>Human-Computer Interaction</li>
-          <li>Design and Analysis of Data Structures</li>
-          <li>Theory of Computation</li>
-          <li>Numerical Algorithms for Computational Mathematics</li>
-          <li>Business Ethics</li>
-          <li>Business French</li>
-        </ul>
-
-        <hr className="my-10 border-t-1 border-black" />
-        <h3>Skills</h3>
-        <h4 className='pt-5'>Programming Languages:</h4>
-        <p>Python, Java, C, SQL, HTML, CSS, JavaScript, Linux</p>
-        <h4 className='pt-5'>Tools, Frameworks, Databases:</h4>
-        <p>GitHub, GCP, MS Azure, Terraform, Docker, JIRA, SpringBoot, React.js, Node.js, MongoDB, MS SQL Server</p>
-        <h4 className='pt-5'>Development Practices:</h4>
-        <p>Agile Software Development (Scrum), CI/CD, REST APIs, Application Security</p>
-        <h4 className='pt-5'>Soft Skills:</h4>
-        <p>Communication, Teamwork, Collaboration, Organization, Fast Learner, Problem-solving, Attention to detail</p>
-        <h4 className='pt-5'>Languages:</h4>
-        <p>French and English (Bilingual Proficiency)</p>
+          <hr className="my-10 border-t-1 border-black" />
+          <h3>Work Experience</h3>
+          {workExperiences.map((experience, index) => (
+            <div key={index} className="flex justify-between">
+              <p className="pt-5">{experience.title}<br/>
+                {experience.company}
+              </p>
+              <p className="text-right">{experience.date}</p>
+            </div>
+          ))}
+          <hr className="my-10 border-t-1 border-black" />
+          <h3>Relevant Courses</h3>
+          <ul className="list-disc pl-5 pt-5">
+            <li>Introduction to Computer Science 1 & 2</li>
+            <li>Software Engineering</li>
+            <li>Software Design</li>
+            <li>Operating Systems</li>
+            <li>Databases</li>
+            <li>Software Tools and Systems Programming</li>
+            <li>Computer Organization</li>
+            <li>Human-Computer Interaction</li>
+            <li>Design and Analysis of Data Structures</li>
+            <li>Theory of Computation</li>
+            <li>Numerical Algorithms for Computational Mathematics</li>
+            <li>Business Ethics</li>
+            <li>Business French</li>
+          </ul>
+          <hr className="my-10 border-t-1 border-black" />
+          <h3>Skills</h3>
+          <h4 className='pt-5'>Programming Languages:</h4>
+          <p>Python, Java, C, SQL, HTML, CSS, JavaScript, Linux</p>
+          <h4 className='pt-5'>Tools, Frameworks, Databases:</h4>
+          <p>GitHub, GCP, MS Azure, Terraform, Docker, JIRA, SpringBoot, React.js, Node.js, MongoDB, MS SQL Server</p>
+          <h4 className='pt-5'>Development Practices:</h4>
+          <p>Agile Software Development (Scrum), CI/CD, REST APIs, Application Security</p>
+          <h4 className='pt-5'>Soft Skills:</h4>
+          <p>Communication, Teamwork, Collaboration, Organization, Fast Learner, Problem-solving, Attention to detail</p>
+          <h4 className='pt-5'>Languages:</h4>
+          <p>French and English (Bilingual Proficiency)</p>
+        </div>
 
       </ContentContainer>
       <ContactMe />

@@ -13,7 +13,7 @@ const ContactMe = () => {
   return (
     <>
       <ContentContainer>
-        <div className='bg-light_blue py-10 px-32'>
+        <div id='ContactMeSection' className='bg-light_blue py-10 px-32'>
           <h2>Contact Me</h2>
           <form className='pt-5'>
             <div className='flex gap-4'>
