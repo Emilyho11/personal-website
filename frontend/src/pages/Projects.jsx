@@ -5,6 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
+// Stock Management App Images
+import StockData from '../assets/images/stocks_app/stockData.jpg';
+
 // Healthcare Web Application Images
 import PrescriberPage from '../assets/images/healthcare_app/prescriber_page.jpg';
 import GreenResources from '../assets/images/healthcare_app/green_resources.jpg';
@@ -66,6 +69,20 @@ const Projects = () => {
   }
 
   const projectData = [
+    {
+      name: 'Stock Management App',
+      gitHub: 'https://github.com/Emilyho11/Stock-Management-App',
+      techStack: 'GCP (Google Cloud Platform), Spring Boot, Java, React.js, REST APIs, SQL, PostgreSQL',
+      overallDescription: 'Elevate your stock trading experience with this innovative app that lets you explore and track a variety of stocks, build personalized portfolios and stocklists, and execute seamless transactions. You can dive deeper into market analytics with advanced covariance and correlation tools, follow and connect with friends, and share insights by writing reviews on your friends\' stocklists. The app also harnesses predictive algorithms to forecast future stock prices, visualizing trends with dynamic graphs for different companies.',
+      date: 'July 2024 - August 2024',
+      description: [
+        'Learned to use GCP (Google Cloud Platform) to deploy the app, Spring Boot for the backend, and React.js for the frontend',
+      ],
+      images: [
+        StockData
+      ],
+      ratio: '16/9'
+    },
     {
       name: 'Healthcare Web Application',
       gitHub: 'https://github.com/mjsflames/c01w24-project-RxValidators',
