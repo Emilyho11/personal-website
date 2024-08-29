@@ -6,7 +6,7 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 const Footer = () => {
   return (
     <>
-      <div className='flex justify-between items-center text-back_light_blue bg-dark_blue h-[80px]'>
+      <div className='flex justify-between items-center text-back_light_blue bg-dark_blue h-[50px] fixed bottom-0 left-0 w-full'>
         <p className='flex-1 text-center text-lg'>Emily Ho ©2024</p>
         <div className="space-x-4 pr-8 text-2xl">
           <a href="https://github.com/Emilyho11" target="_blank" rel="noopener noreferrer">
