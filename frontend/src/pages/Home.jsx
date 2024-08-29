@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ContentContainer from '../components/ContentContainer';
 import ProfessionalPic from '../assets/images/emily_professional_pic.jpg';
 import musicBg from '../assets/images/music_background.png';
 import ContactMe from '../components/ContactMe';
 
 const Home = () => {
+  const [text, setText] = useState('');
+  const [isHello, setIsHello] = useState(true);
   // Define an array of work experiences
   const workExperiences = [
     {
@@ -24,12 +26,34 @@ const Home = () => {
     }
   ];
 
+  useEffect(() => {
+    const helloText = "Hello";
+    const bonjourText = "Bonjour";
+    let index = 0;
+    let fullText = isHello? helloText: bonjourText;
+
+    const interval = setInterval(() => {
+      setText(fullText.substring(0, index));
+      index++;
+      if (index > fullText.length) {
+        clearInterval(interval);
+        setTimeout(() => {
+          setIsHello(!isHello);
+        }, 1500); // Pause before typing the next word
+      }
+    }, 200); // Speed of typing animation
+
+    return () => clearInterval(interval);
+  }, [isHello]);
+
   return (
     <>
       <div className='text-dark_blue pb-36 pt-32 text-center' style={{
         backgroundImage: `url(${musicBg})`,
         boxShadow: '0px 6px 8px rgba(0, 0, 0, 0.3)'}}>
-        <h1 className='pt-10'>Hello, Bonjour,<br/>I'm Emily!</h1>
+        <h1 className='pt_10'>
+          <span className='overflow-hidden whitespace-nowrap border-r-2 border-black animate-typing' style={{ height: '2.5ch' }}>{text}</span><br/>I'm Emily!
+        </h1>
         <h2 className='pt-10 font-serif'>Welcome to my Personal Website!</h2>
       </div>
       <ContentContainer className='text-dark_blue bg-light_blue py-20 px-32'>

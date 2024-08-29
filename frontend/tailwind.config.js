@@ -14,6 +14,15 @@ export default {
 				"1/8": "12.5%",
         "1/10": "10%",
 			},
+			keyframes: {
+				blink: {
+				'from, to': { borderColor: 'transparent' },
+				'50%': { borderColor: 'black' },
+				},
+			},
+			animation: {
+				typing: 'steps(40, end) forwards, blink 0.75s step-end infinite',
+			},
 		},
 	},
 	plugins: [],
