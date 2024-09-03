@@ -58,6 +58,12 @@ const hobbies = [
         description: 'MoveU is a UofT Athletics club that promotes healthy living and physical activity. As a first year representative for this club, I planned and participated in various events and activities such as dodgeball, weekly workouts, SheMoves, and many more! It was a great way to stay active and meet new people, while ensuring that students are taking care of their physical health.',
         date: '2021-2022',
         image: moveU
+    },
+    {
+        hobbyName: 'Horseback Riding',
+        description: 'I took horseback riding lessons.',
+        date: '2019-2020',
+        image: moveU
     }
 ]
 
