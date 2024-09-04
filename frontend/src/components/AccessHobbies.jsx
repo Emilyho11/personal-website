@@ -2,9 +2,11 @@ import Piano from '../assets/images/hobbies/piano.jpg';
 import DragonBoat from '../assets/images/hobbies/dragonBoat.jpg';
 import WushuCompetition from '../assets/images/hobbies/wushu_competition.jpg';
 import Flute from '../assets/images/hobbies/kiss_the_rain_flute.jpg';
-import CheerPerformance from '../assets/images/hobbies/performance.jpg';
+import CheerPerformance from '../assets/images/hobbies/performance2.jpg';
 import moveU from '../assets/images/hobbies/tabling_moveU.jpg';
 import Swimming from '../assets/images/hobbies/swimming.jpg';
+import Horseback from '../assets/images/hobbies/horse_back_riding.jpg';
+import SkateBoarding from '../assets/images/hobbies/skateboarding.jpg';
 
 const hobbies = [
     {
@@ -63,7 +65,13 @@ const hobbies = [
         hobbyName: 'Horseback Riding',
         description: 'I took horseback riding lessons.',
         date: '2019-2020',
-        image: moveU
+        image: Horseback
+    },
+    {
+        hobbyName: 'Skateboarding',
+        description: 'I enjoy skateboarding.',
+        date: '2021-Present',
+        image: SkateBoarding
     }
 ]
 
