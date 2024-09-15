@@ -6,7 +6,11 @@ import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 // Stock Management App Images
-import StockData from '../assets/images/stocks_app/stockData.jpg';
+import StockData from '../assets/images/stocks_app/createStock.jpg';
+import PortfolioPage from '../assets/images/stocks_app/portfolioPage.png';
+import GoogleGraph from '../assets/images/stocks_app/stocksGoogleGraph.png';
+import CovCalc from '../assets/images/stocks_app/covarianceCalc.png';
+import Reviews from '../assets/images/stocks_app/reviews.jpg';
 
 // Healthcare Web Application Images
 import PrescriberPage from '../assets/images/healthcare_app/prescriber_page.jpg';
@@ -79,7 +83,11 @@ const Projects = () => {
         'Learned to use GCP (Google Cloud Platform) to deploy the app, Spring Boot for the backend, and React.js for the frontend',
       ],
       images: [
-        StockData
+        GoogleGraph,
+        PortfolioPage,
+        StockData,
+        CovCalc,
+        Reviews
       ],
       ratio: '16/9'
     },
