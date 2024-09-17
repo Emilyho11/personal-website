@@ -106,6 +106,7 @@ const Home = () => {
           <h3>Relevant Courses</h3>
           <ul className="list-disc pl-5 pt-5">
             <li>Introduction to Computer Science 1 & 2</li>
+            <li>Engineering Large Software Systems</li>
             <li>Software Engineering</li>
             <li>Software Design</li>
             <li>Operating Systems</li>
