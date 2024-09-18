@@ -6,7 +6,10 @@ import ContactMe from '../components/ContactMe';
 
 const Home = () => {
   const [text, setText] = useState('');
-  const [isHello, setIsHello] = useState(true);
+  const [isTyping, setIsTyping] = useState(true);
+  const text_arr = ['Hello', 'Bonjour'];
+  const [textArrIndex, setTextArrIndex] = useState(0);
+
   // Define an array of work experiences
   const workExperiences = [
     {
@@ -27,24 +30,31 @@ const Home = () => {
   ];
 
   useEffect(() => {
-    const helloText = "Hello";
-    const bonjourText = "Bonjour";
-    let index = 0;
-    let fullText = isHello? helloText: bonjourText;
+    let fullText = text_arr[textArrIndex];
+    let index = isTyping ? 0 : fullText.length;
+    let typing = true;
 
     const interval = setInterval(() => {
-      setText(fullText.substring(0, index));
-      index++;
-      if (index > fullText.length) {
-        clearInterval(interval);
-        setTimeout(() => {
-          setIsHello(!isHello);
-        }, 1500); // Pause before typing the next word
+      if (typing) {
+        setText(fullText.substring(0, index));
+        index++;
+        if (index > fullText.length) {
+          setTimeout(() => {
+            typing = false;
+          }, 500); // Pause before typing the next word
+        }
+      } else {
+        setText(fullText.substring(0, index));
+        index--;
+        if (index < 0) {
+          clearInterval(interval);
+          setTextArrIndex((prev) => (prev + 1) % text_arr.length);
+        }
       }
-    }, 200); // Speed of typing animation
-
+    }
+    , 200); // Speed of typing animation
     return () => clearInterval(interval);
-  }, [isHello]);
+  }, [isTyping, textArrIndex]);
 
   return (
     <>
