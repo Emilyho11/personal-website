@@ -7,6 +7,7 @@ import moveU from '../assets/images/hobbies/tabling_moveU.jpg';
 import Swimming from '../assets/images/hobbies/swimming.jpg';
 import Horseback from '../assets/images/hobbies/horse_back_riding.jpg';
 import SkateBoarding from '../assets/images/hobbies/skateboarding.jpg';
+import Saxophone from '../assets/images/hobbies/saxophone.jpg';
 
 const hobbies = [
     {
@@ -40,13 +41,25 @@ const hobbies = [
     {
         hobbyName: 'Cheerleading Team',
         description: 'Particpated in the uoft cheer team, and performed at various events, such as basketball games, and performances. It was a great experience to work with my teammates, and to build a strong team spirit.',
-        date: '2023-2024',
+        date: '2022-2023, 2023-2024',
         image: CheerPerformance
     },
     {
         hobbyName: 'Flute',
         description: 'I was part of concert band from grade 6 to grade 10, playing the flute. I enjoyed playing in the band, and performing at school concerts, music competitions, and music festivals. I have played many pieces, such as "The Lion King", "Pirates of the Caribbean", and "The Incredibles".',
         date: '2014-2019',
+        image: Flute
+    },
+    {
+        hobbyName: 'Saxophone',
+        description: 'I used to play the saxophone after I learned to play the flute because I heard that both instruments have very similar fingerings. I wanted to give it a try!',
+        date: '2018-2019',
+        image: Saxophone
+    },
+    {
+        hobbyName: 'Guitar',
+        description: 'I took guitar lessons.',
+        date: '2018-2019',
         image: Flute
     },
     {
