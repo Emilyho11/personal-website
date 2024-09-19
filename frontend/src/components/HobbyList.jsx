@@ -11,7 +11,7 @@ export const HobbyList = () => {
   };
 
   return (
-    <div className='xl:grid xl:grid-cols-2 gap-10'>
+    <div className='xl:grid xl:grid-cols-2 gap-10 mb-40'>
       {hobbies.map((hobby, index) => (
         <div key={index} className='bg-dark_blue p-6 text-back_light_blue rounded shadow mb-4 xl:mb-0'>
           <h3 className="text-2xl">{hobby.hobbyName}</h3>
