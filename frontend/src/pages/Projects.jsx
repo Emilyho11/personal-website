@@ -64,6 +64,7 @@ import CarnivalHome from '../assets/images/game_carnival/carnival_home.png';
 
 const Projects = () => {
   const [visibleDescriptions, setVisibleDescriptions] = useState({});
+  const [hoveredProject, setHoveredProject] = useState(null);
 
   const toggleDescription = (index) => {
     setVisibleDescriptions((prev) => ({
@@ -223,53 +224,37 @@ const Projects = () => {
 
   return (
     <ContentContainer>
-      <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
+      <div className='flex flex-wrap gap-4 p-4'>
         {projectData.map((project, index) => (
-          <div key={index} className='bg-light_blue text-dark_blue mb-8 shadow-md'>
-            <div className='flex justify-between bg-dark_blue text-back_light_blue py-4'>
-              <h2 className='pl-8 flex-1 tracking-wide text-center'>{project.name}</h2>
-              <div className='pt-2 space-x-4 pr-8 flex text-3xl'>
-                {project.gitHub && (
-                  <a href={project.gitHub} target="_blank" rel="noopener noreferrer">
-                    <FontAwesomeIcon icon={faGithub} />
-                  </a>
-                )}
-                {project.youtube && (
-                  <a href={project.youtube} target="_blank" rel="noopener noreferrer">
-                    <FontAwesomeIcon icon={faYoutube} />
-                  </a>
-                )}
-              </div>
+          <div
+            key={index}
+            className='relative w-96 h-56 cursor-pointer'
+            onMouseEnter={() => setHoveredProject(index)}
+            onMouseLeave={() => setHoveredProject(null)}
+            onClick={() => toggleDescription(index)}
+          >
+          {visibleDescriptions[index] ? (
+            <div className='p-4 bg-white border border-gray-300 overflow-y-scroll h-56'>
+              <h3 className='text-lg font-bold'>{project.name}</h3>
+              <p>{project.overallDescription}</p>
+              <ul className='list-disc pl-5'>
+                {project.description.map((desc, i) => (
+                  <li key={i}>{desc}</li>
+                ))}
+              </ul>
             </div>
-            <div className='gap-20 justify-center p-10 lg:px-16'>
-              <div>
-                <h3 className='text-xl font-bold tracking-wider'>Tech Stack:</h3>
-                <p className='my-2 text-lg'>{project.techStack}</p>
-                <br/>
-                <h3 className='text-xl font-bold tracking-wider'>Description:</h3>
-                <p className='text-lg my-2'>{project.overallDescription}</p>
-                <button
-                  className='pt-2 pb-6 mt-4 rounded flex items-center text-xl hover:text-links'
-                  onClick={() => toggleDescription(index)}
-                >
-                  {visibleDescriptions[index] ? 'Hide Details': 'Show Details'}
-                  <FontAwesomeIcon icon={visibleDescriptions[index] ? faChevronUp : faChevronDown} className='ml-2 text-xl' />
-                </button>
-                {visibleDescriptions[index] && (
-                  Array.isArray(project.description) ? (
-                  <ul className='pb-10 text-lg list-disc pl-8'>
-                    <p className='pb-4'>{project.date}</p>
-                    {project.description.map((point, descriptionIndex) => (
-                      <li key={descriptionIndex} className='pl-2'>{point}</li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p className='pt-6 pb-10 text-lg'>{project.description}</p>
-                )
-              )}
-              </div>
-              <Slideshow images={project.images} ratio={project.ratio} />
+          ) : (
+            <img
+              src={project.images[0]}
+              alt={project.name}
+              className='w-full h-full object-cover'
+            />
+          )}
+          {hoveredProject === index && !visibleDescriptions[index] && (
+            <div className="absolute inset-0 bg-black bg-opacity-70 text-white flex items-center justify-center px-2 py-1">
+              {project.name}
             </div>
+          )}
           </div>
         ))}
       </div>
