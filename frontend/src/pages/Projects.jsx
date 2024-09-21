@@ -68,6 +68,7 @@ const Projects = () => {
   const [showMoreDetails, setShowMoreDetails] = useState({});
 
   const toggleDescription = (index) => {
+    console.log(`Toggling description for project ${index}`);
     setVisibleDescriptions((prev) => ({
       ...prev,
       [index]: true,
@@ -75,6 +76,7 @@ const Projects = () => {
   };
 
   const hideDescription = (index) => {
+    console.log(`Hiding description for project ${index}`);
     setVisibleDescriptions((prev) => ({
       ...prev,
       [index]: false,
@@ -247,36 +249,39 @@ const Projects = () => {
             onMouseEnter={() => setHoveredProject(index)}
             onMouseLeave={() => setHoveredProject(null)}
           >
-            {visibleDescriptions[index] ? (
-              <div className='p-4 bg-white border border-gray-300 overflow-y-scroll h-[300px]'>
-                <h3 className='text-lg font-bold underline'>{project.name}</h3>
-                <button onClick={() => hideDescription(index)} className='mt-2 hover:text-blue-600 text-dark_blue underline'>
-                  <FontAwesomeIcon icon={faArrowLeft} /> Back
-                </button>
-                <p>{project.overallDescription}</p>
-                <button onClick={() => toggleShowMore(index)} className='mt-2 text-blue-500 underline'>
-                  {showMoreDetails[index] ? 'Show Less' : 'More Details'}
-                </button>
-                {showMoreDetails[index] && (
-                  <div className='mt-2'>
-                    <ul className='list-disc pl-5'>
-                      {project.description.map((desc, i) => (
-                        <li key={i}>{desc}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-            ) : (
+            {!visibleDescriptions[index] ? (
               <img
-                src={project.images[0]}
-                alt={project.name}
-                className='w-full h-full object-cover'
-                onClick={() => toggleDescription(index)}
+              src={project.images[0]}
+              alt={project.name}
+              className='w-full h-full object-cover'
               />
+            ) : (
+              <div>
+                <h3 className='text-lg font-bold underline bg-dark_blue text-center text-white p-2'>{project.name}</h3>
+                <div className='p-4 bg-white border border-gray-300 overflow-y-scroll h-[260px]'>
+                  <button onClick={() => hideDescription(index)} className='mt-2 text-blue-700 hover:text-blue-400 underline'>
+                    <FontAwesomeIcon icon={faArrowLeft} /> Back
+                  </button>
+                  <p>{project.overallDescription}</p>
+                  <button onClick={() => toggleShowMore(index)} className='mt-2 text-blue-700 hover:text-blue-400 underline'>
+                    {showMoreDetails[index] ? 'Show Less' : 'More Details'}
+                  </button>
+                  {showMoreDetails[index] && (
+                    <div className='mt-2'>
+                      <ul className='list-disc pl-5'>
+                        {project.description.map((desc, i) => (
+                          <li key={i}>{desc}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              </div>
             )}
             {hoveredProject === index && !visibleDescriptions[index] && (
-              <div className="absolute inset-0 bg-black bg-opacity-70 text-white flex items-center justify-center px-2 py-1">
+              <div
+                className="absolute inset-0 bg-black bg-opacity-70 text-white flex items-center justify-center px-2 py-1"
+                onClick={() => toggleDescription(index)}>
                 {project.name}
               </div>
             )}
