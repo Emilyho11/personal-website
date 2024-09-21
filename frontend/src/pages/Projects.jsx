@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import ContentContainer from '../components/ContentContainer'
 import Slideshow from '../components/Slideshow.jsx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faChevronUp, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 // Stock Management App Images
@@ -65,13 +65,28 @@ import CarnivalHome from '../assets/images/game_carnival/carnival_home.png';
 const Projects = () => {
   const [visibleDescriptions, setVisibleDescriptions] = useState({});
   const [hoveredProject, setHoveredProject] = useState(null);
+  const [showMoreDetails, setShowMoreDetails] = useState({});
 
   const toggleDescription = (index) => {
     setVisibleDescriptions((prev) => ({
       ...prev,
+      [index]: true,
+    }));
+  };
+
+  const hideDescription = (index) => {
+    setVisibleDescriptions((prev) => ({
+      ...prev,
+      [index]: false,
+    }));
+  };
+
+  const toggleShowMore = (index) => {
+    setShowMoreDetails((prev) => ({
+      ...prev,
       [index]: !prev[index],
-    }))
-  }
+    }));
+  };
 
   const projectData = [
     {
@@ -224,37 +239,47 @@ const Projects = () => {
 
   return (
     <ContentContainer>
-      <div className='flex flex-wrap gap-4 p-4'>
+      <div className='flex flex-wrap gap-4 p-4 justify-center'>
         {projectData.map((project, index) => (
           <div
             key={index}
-            className='relative w-96 h-56 cursor-pointer'
+            className='relative w-[500px] h-[300px] cursor-pointer'
             onMouseEnter={() => setHoveredProject(index)}
             onMouseLeave={() => setHoveredProject(null)}
-            onClick={() => toggleDescription(index)}
           >
-          {visibleDescriptions[index] ? (
-            <div className='p-4 bg-white border border-gray-300 overflow-y-scroll h-56'>
-              <h3 className='text-lg font-bold'>{project.name}</h3>
-              <p>{project.overallDescription}</p>
-              <ul className='list-disc pl-5'>
-                {project.description.map((desc, i) => (
-                  <li key={i}>{desc}</li>
-                ))}
-              </ul>
-            </div>
-          ) : (
-            <img
-              src={project.images[0]}
-              alt={project.name}
-              className='w-full h-full object-cover'
-            />
-          )}
-          {hoveredProject === index && !visibleDescriptions[index] && (
-            <div className="absolute inset-0 bg-black bg-opacity-70 text-white flex items-center justify-center px-2 py-1">
-              {project.name}
-            </div>
-          )}
+            {visibleDescriptions[index] ? (
+              <div className='p-4 bg-white border border-gray-300 overflow-y-scroll h-[300px]'>
+                <h3 className='text-lg font-bold underline'>{project.name}</h3>
+                <button onClick={() => hideDescription(index)} className='mt-2 hover:text-blue-600 text-dark_blue underline'>
+                  <FontAwesomeIcon icon={faArrowLeft} /> Back
+                </button>
+                <p>{project.overallDescription}</p>
+                <button onClick={() => toggleShowMore(index)} className='mt-2 text-blue-500 underline'>
+                  {showMoreDetails[index] ? 'Show Less' : 'More Details'}
+                </button>
+                {showMoreDetails[index] && (
+                  <div className='mt-2'>
+                    <ul className='list-disc pl-5'>
+                      {project.description.map((desc, i) => (
+                        <li key={i}>{desc}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <img
+                src={project.images[0]}
+                alt={project.name}
+                className='w-full h-full object-cover'
+                onClick={() => toggleDescription(index)}
+              />
+            )}
+            {hoveredProject === index && !visibleDescriptions[index] && (
+              <div className="absolute inset-0 bg-black bg-opacity-70 text-white flex items-center justify-center px-2 py-1">
+                {project.name}
+              </div>
+            )}
           </div>
         ))}
       </div>
