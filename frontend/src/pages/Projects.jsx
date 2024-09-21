@@ -66,6 +66,7 @@ const Projects = () => {
   const [visibleDescriptions, setVisibleDescriptions] = useState({});
   const [hoveredProject, setHoveredProject] = useState(null);
   const [showMoreDetails, setShowMoreDetails] = useState({});
+  const [showMoreImages, setShowMoreImages] = useState({});
 
   const toggleDescription = (index) => {
     console.log(`Toggling description for project ${index}`);
@@ -83,8 +84,15 @@ const Projects = () => {
     }));
   };
 
-  const toggleShowMore = (index) => {
+  const toggleShowMoreDetails = (index) => {
     setShowMoreDetails((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
+  };
+
+  const toggleShowMoreImages = (index) => {
+    setShowMoreImages((prev) => ({
       ...prev,
       [index]: !prev[index],
     }));
@@ -241,6 +249,7 @@ const Projects = () => {
 
   return (
     <ContentContainer>
+      <h1 className='text-3xl font-bold text-center mt-4'>My Projects</h1>
       <div className='flex flex-wrap gap-4 p-4 justify-center'>
         {projectData.map((project, index) => (
           <div
@@ -257,13 +266,15 @@ const Projects = () => {
               />
             ) : (
               <div>
-                <h3 className='text-lg font-bold underline bg-dark_blue text-center text-white p-2'>{project.name}</h3>
-                <div className='p-4 bg-white border border-gray-300 overflow-y-scroll h-[260px]'>
-                  <button onClick={() => hideDescription(index)} className='mt-2 text-blue-700 hover:text-blue-400 underline'>
-                    <FontAwesomeIcon icon={faArrowLeft} /> Back
+                <div className='flex bg-dark_blue text-white p-2 items-center'>
+                  <button onClick={() => hideDescription(index)} className='mr-2'>
+                    <FontAwesomeIcon icon={faArrowLeft} className='hover:text-zinc-400' />
                   </button>
+                  <h3 className='text-lg font-bold underline mx-auto'>{project.name}</h3>
+              </div>
+                <div className='p-4 bg-white border border-gray-300 overflow-y-scroll h-[260px]'>
                   <p>{project.overallDescription}</p>
-                  <button onClick={() => toggleShowMore(index)} className='mt-2 text-blue-700 hover:text-blue-400 underline'>
+                  <button onClick={() => toggleShowMoreDetails(index)} className='mt-2 text-blue-700 hover:text-blue-400 underline block'>
                     {showMoreDetails[index] ? 'Show Less' : 'More Details'}
                   </button>
                   {showMoreDetails[index] && (
@@ -273,6 +284,14 @@ const Projects = () => {
                           <li key={i}>{desc}</li>
                         ))}
                       </ul>
+                    </div>
+                  )}
+                  <button onClick={() => toggleShowMoreImages(index)} className='mt-2 text-blue-700 hover:text-blue-400 underline block'>
+                    {showMoreImages[index] ? 'Show Less Images' : 'Show More Images'}
+                  </button>
+                  {showMoreImages[index] && (
+                    <div className='p-2'>
+                        <Slideshow images={project.images} ratio={project.ratio} />
                     </div>
                   )}
                 </div>
