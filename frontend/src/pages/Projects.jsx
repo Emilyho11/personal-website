@@ -60,6 +60,7 @@ import DisneyGuess from '../assets/images/game_carnival/disney_guess.png';
 import Maze from '../assets/images/game_carnival/maze.png';
 import CarnivalMainMenu from '../assets/images/game_carnival/main_menu.png';
 import CarnivalHome from '../assets/images/game_carnival/carnival_home.png';
+import ProjectModal from '../components/ProjectModal.jsx';
 
 
 const Projects = () => {
@@ -67,7 +68,8 @@ const Projects = () => {
   const [hoveredProject, setHoveredProject] = useState(null);
   const [showMoreDetails, setShowMoreDetails] = useState({});
   const [showMoreImages, setShowMoreImages] = useState({});
-
+  const [selectedProject, setSelectedProject] = useState(null);
+  
   const toggleDescription = (index) => {
     console.log(`Toggling description for project ${index}`);
     setVisibleDescriptions((prev) => ({
@@ -257,56 +259,24 @@ const Projects = () => {
             className='relative w-[500px] h-[300px] cursor-pointer'
             onMouseEnter={() => setHoveredProject(index)}
             onMouseLeave={() => setHoveredProject(null)}
+            onClick={() => setSelectedProject(project)}
           >
-            {!visibleDescriptions[index] ? (
-              <img
-              src={project.images[0]}
-              alt={project.name}
-              className='w-full h-full object-cover'
-              />
-            ) : (
-              <div>
-                <div className='flex bg-dark_blue text-white p-2 items-center'>
-                  <button onClick={() => hideDescription(index)} className='mr-2'>
-                    <FontAwesomeIcon icon={faArrowLeft} className='hover:text-zinc-400' />
-                  </button>
-                  <h3 className='text-lg font-bold underline mx-auto'>{project.name}</h3>
-              </div>
-                <div className='p-4 bg-white border border-gray-300 overflow-y-scroll h-[260px]'>
-                  <p>{project.overallDescription}</p>
-                  <button onClick={() => toggleShowMoreDetails(index)} className='mt-2 text-blue-700 hover:text-blue-400 underline block'>
-                    {showMoreDetails[index] ? 'Show Less' : 'More Details'}
-                  </button>
-                  {showMoreDetails[index] && (
-                    <div className='mt-2'>
-                      <ul className='list-disc pl-5'>
-                        {project.description.map((desc, i) => (
-                          <li key={i}>{desc}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                  <button onClick={() => toggleShowMoreImages(index)} className='mt-2 text-blue-700 hover:text-blue-400 underline block'>
-                    {showMoreImages[index] ? 'Show Less Images' : 'Show More Images'}
-                  </button>
-                  {showMoreImages[index] && (
-                    <div className='p-2'>
-                        <Slideshow images={project.images} ratio={project.ratio} />
-                    </div>
-                  )}
-                </div>
-              </div>
-            )}
-            {hoveredProject === index && !visibleDescriptions[index] && (
-              <div
-                className="absolute inset-0 bg-black bg-opacity-70 text-white flex items-center justify-center px-2 py-1"
-                onClick={() => toggleDescription(index)}>
-                {project.name}
+            <img src={project.images[0]} alt={project.name} className='w-full h-full object-cover'/>
+            {hoveredProject === index && (
+              <div className='absolute inset-0 bg-black bg-opacity-70 text-white flex items-center justify-center'>
+                <span className='text-lg font-bold'>{project.name}</span>
               </div>
             )}
           </div>
         ))}
       </div>
+      {selectedProject && (
+        <ProjectModal
+          isVisible={selectedProject !== null}
+          onClose={() => setSelectedProject(null)}
+          project={selectedProject}
+        />
+      )}
     </ContentContainer>
   );
 }
