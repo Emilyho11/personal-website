@@ -4,10 +4,10 @@ import ContentContainer from './ContentContainer'
 const ContactMe = () => {
 
   const fields = [
-    { field: 'Name', value: 'name'},
-    { field: 'Email', value: 'email'},
-    { field: 'Phone Number', value: 'phone'},
-    { field: 'Message', value: 'message'}
+    { field: 'Name', value: 'name', required: true},
+    { field: 'Email', value: 'email', required: true},
+    { field: 'Phone Number', value: 'phone', required: false},
+    { field: 'Message', value: 'message', required: true}
   ]
 
   return (
@@ -19,14 +19,22 @@ const ContactMe = () => {
             <div className='flex gap-4'>
               {fields.slice(0, 3).map((field, index) => (
                 <div key={index} className='flex-1'>
-                  <label htmlFor={field.value}>{field.field}</label>
-                  <input type='text' id={field.value} name={field.value} className='w-full p-2'/>
+                  <label htmlFor={field.value}>
+                    {field.field}
+                    {field.required && <span className='text-red-500'> *</span>}
+                  </label>
+                  <input type='text' id={field.value} name={field.value} className='w-full p-2' required={field.required}/>
                 </div>
               ))}
             </div>
             <div className='pt-5'>
-              <label htmlFor='message'>Message</label>
-              <textarea id='message' name='message' className='w-full p-2 h-32'></textarea>
+              <label htmlFor='message'>
+                Message
+                {fields.find(field => field.value === 'message').required && (
+                  <span className='text-red-500'> *</span>
+                )}
+              </label>
+              <textarea id='message' name='message' className='w-full p-2 h-32' required={fields.find(field => field.value === 'message').required}></textarea>
             </div>
             <button type='submit' className='bg-dark_blue text-back_light_blue p-2 mt-5'>Submit</button>
           </form>
