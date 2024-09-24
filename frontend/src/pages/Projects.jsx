@@ -13,6 +13,7 @@ import CovCalc from '../assets/images/stocks_app/covarianceCalc.png';
 import Reviews from '../assets/images/stocks_app/reviews.jpg';
 
 // Healthcare Web Application Images
+import HealthcareFront from '../assets/images/healthcare_app/healthcare_front.jpg';
 import PrescriberPage from '../assets/images/healthcare_app/prescriber_page.jpg';
 import GreenResources from '../assets/images/healthcare_app/green_resources.jpg';
 import LoginPage from '../assets/images/healthcare_app/login_page.jpg';
@@ -25,6 +26,7 @@ import NewPatientAccount from '../assets/images/healthcare_app/new_patient_accou
 import NewPrescriberAccount from '../assets/images/healthcare_app/new_prescriber_account.jpg';
 
 // Robotic Arm Images
+import CCCFront from '../assets/images/robotic_arm/CCC_front.jpg';
 import ThankyouCCC from '../assets/images/robotic_arm/thankyou_ccc.jpg';
 import ThankyouCCCScreen from '../assets/images/robotic_arm/thankyou_ccc_screen.jpg';
 import Beach from '../assets/images/robotic_arm/beach.jpg';
@@ -34,12 +36,14 @@ import Blueprint from '../assets/images/robotic_arm/blueprint.jpg';
 
 
 // Assembly Platform Game Images
+import FullGame from '../assets/images/assembly_project/full_game.png';
 import LosePage from '../assets/images/assembly_project/lose.png';
 import WinPage from '../assets/images/assembly_project/win.png';
 import MainMenu from '../assets/images/assembly_project/main_menu.png';
 import PlatformGame from '../assets/images/assembly_project/platform_game.png';
 
 // Android App Images
+import UTT from '../assets/images/android_app/UTT.png';
 import FutureCourses from '../assets/images/android_app/addFutureCourses.png';
 import AdminAddCourses from '../assets/images/android_app/adminAddCourses.png';
 import AdminViewCourses from '../assets/images/android_app/adminViewCourses.png';
@@ -52,6 +56,7 @@ import Timeline from '../assets/images/android_app/timeline.png';
 import SystemMonitoringTool from '../assets/images/sysMonTool.png';
 
 // Game Carnival Images
+import CombinedKidsGame from '../assets/images/game_carnival/combined_kids_game.png';
 import SpaceGame from '../assets/images/game_carnival/space_game.png';
 import FlappyGame from '../assets/images/game_carnival/flappy_game.png';
 import ApplePicking from '../assets/images/game_carnival/apple_picking.png';
@@ -110,6 +115,7 @@ const Projects = () => {
       description: [
         'Learned to use GCP (Google Cloud Platform) to deploy the app, Spring Boot for the backend, and React.js for the frontend',
       ],
+      imageFront: GoogleGraph,
       images: [
         GoogleGraph,
         PortfolioPage,
@@ -132,6 +138,7 @@ const Projects = () => {
         'Integrated REST APIs from MS Azure, Google Maps, and Geoapify to suggest nearby outdoor activities, leveraging real-time data',
         'Led a team of seven using Agile-Scrum practices, GitHub, and JIRA to efficiently manage daily scrum meetings and speed up project delivery by 25%'
       ],
+      imageFront: HealthcareFront,
       images: [
         PrescriberPage,
         GreenResources,
@@ -155,6 +162,7 @@ const Projects = () => {
         'This project gets the user to draw something (simple or very detailed), which then writes C++ code for robotic arms to draw that exact image',
         'Completed the project within a week to present it to the CEO and managers'
       ],
+      imageFront: CCCFront,
       images: [
         ThankyouCCC,
         ThankyouCCCScreen,
@@ -178,6 +186,7 @@ const Projects = () => {
         'Designed a simple use of MIPS memory address with heap, stack, and code and data segments to optimize development',
         'Effectively used modular programming alongside stack manipulation to reduce the chance of bugs and coupling'
       ],
+      imageFront: FullGame,
       images: [
         MainMenu,
         WinPage,
@@ -197,6 +206,7 @@ const Projects = () => {
         'Generated graphical representations of memory and CPU usage, enhancing data visualization for improved analysis',
         'Documented the development process and provided user support to facilitate seamless adoption and utilization'
       ],
+      imageFront: SystemMonitoringTool,
       images: [SystemMonitoringTool],
       ratio: '1/1'
     },
@@ -212,6 +222,7 @@ const Projects = () => {
         'Developed backend services with Firebase, a cloud-hosted NoSQL database, to efficiently manage over 500 courses and 10,000 active users',
         'Collaborated with a team of six, employing GitHub version control and JIRA to oversee user stories, sprints, and daily standups'
       ],
+      imageFront: UTT,
       images: [
         AndroidHomePage,
         AndroidLogin,
@@ -235,6 +246,7 @@ const Projects = () => {
         'Creatively planned and designed the game using software design patterns and object-oriented programming',
         'The game contains a set of small games that the user can choose from: Maze Game, Guessing Game on Animals and Disney Characters, educational game about our Solar System, educational Apple-picking game about mathematical operations, and a Flappy Bird game that randomly changes avatars',
       ],
+      imageFront: CombinedKidsGame,
       images: [
         SpaceGame,
         FlappyGame,
@@ -261,7 +273,7 @@ const Projects = () => {
             onMouseLeave={() => setHoveredProject(null)}
             onClick={() => setSelectedProject(project)}
           >
-            <img src={project.images[0]} alt={project.name} className='w-full h-full object-cover'/>
+            <img src={project.imageFront} alt={project.name} className='w-full h-full object-cover'/>
             {hoveredProject === index && (
               <div className='absolute inset-0 bg-black bg-opacity-70 text-white flex items-center justify-center'>
                 <span className='text-xl font-bold'>{project.name}</span>
