@@ -22,7 +22,7 @@ const ProjectModal = ( { isVisible, onClose, project } ) => {
             <div className='relative bg-white rounded-lg w-3/4 h-3/4 overflow-y-auto'>
                 <button onClick={onClose} className='absolute top-2 right-2 text-red-500 hover:text-red-300'>
                     <FontAwesomeIcon icon={faTimes} size="xl"/>
-                </button>
+                </button>   
                 <div className='bg-dark_blue text-white p-4'>
                     <h2 className='text-2xl font-bold'>{project.name}</h2>
                 </div>

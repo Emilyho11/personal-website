@@ -251,7 +251,7 @@ const Projects = () => {
 
   return (
     <ContentContainer>
-      <h1 className='text-3xl font-bold text-center mt-4'>My Projects</h1>
+      <h1 className='text-4xl font-bold text-center mt-4'>My Projects</h1>
       <div className='flex flex-wrap gap-4 p-4 justify-center'>
         {projectData.map((project, index) => (
           <div
@@ -264,7 +264,7 @@ const Projects = () => {
             <img src={project.images[0]} alt={project.name} className='w-full h-full object-cover'/>
             {hoveredProject === index && (
               <div className='absolute inset-0 bg-black bg-opacity-70 text-white flex items-center justify-center'>
-                <span className='text-lg font-bold'>{project.name}</span>
+                <span className='text-xl font-bold'>{project.name}</span>
               </div>
             )}
           </div>
