@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import hobbies from './AccessHobbies.jsx'
+import Slideshow from './Slideshow.jsx';
 
 export const HobbyList = () => {
   const [expanded, setExpanded] = useState(Array(hobbies.length).fill(false));
@@ -11,11 +12,11 @@ export const HobbyList = () => {
   };
 
   return (
-    <div>
+    <div className='flex flex-col items-center justify-center min-h-screen'>
       <h1 className='text-4xl text-center mb-10'>My Hobbies</h1>
       <div className='xl:grid xl:grid-cols-2 gap-10 mb-40'>
         {hobbies.map((hobby, index) => (
-          <div key={index} className='bg-dark_blue p-6 text-back_light_blue rounded shadow mb-4 xl:mb-0 w-[600px] h-[350px] overflow-y-auto'>
+          <div key={index} className='bg-dark_blue p-6 text-back_light_blue rounded shadow mb-4 xl:mb-0 md:w-[400px] md:h-[350px] 2xl:w-[650px] 2xl:h-[350px] overflow-y-auto'>
             <h3 className="text-2xl">{hobby.hobbyName}</h3>
             <p className="text-m font-semibold">{hobby.date}</p>
             <div className='2xl:flex gap-6 items-start'>
