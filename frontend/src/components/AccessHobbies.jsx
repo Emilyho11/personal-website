@@ -9,6 +9,8 @@ import Skating from '../assets/images/hobbies/skating.jpg';
 import Horseback from '../assets/images/hobbies/horse_back_riding.jpg';
 import SkateBoarding from '../assets/images/hobbies/skateboarding.jpg';
 import Saxophone from '../assets/images/hobbies/saxophone.jpg';
+import AthleticsCouncil from '../assets/images/hobbies/BHAA.jpg';
+import MusicCouncil from '../assets/images/hobbies/bhss_music_council.jpg';
 
 const hobbies = [
     {
@@ -86,6 +88,18 @@ const hobbies = [
         description: 'I enjoy skateboarding.',
         date: '2021-Present',
         image: [SkateBoarding]
+    },
+    {
+        hobbyName: 'Athletics Council',
+        description: 'Joined the Athletics Council at my High School, organizing sports events and helping with sales.',
+        date: '2017-2018',
+        image: [AthleticsCouncil]
+    },
+    {
+        hobbyName: 'Music Council',
+        description: 'Joined the Music Council at my High School and planned music concerts and socials for band and for music students.',
+        date: '2017-2018',
+        image: [MusicCouncil]
     }
 ]
 
