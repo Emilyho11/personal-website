@@ -2,34 +2,36 @@ import React, { useState, useEffect } from 'react';
 import ContentContainer from '../components/ContentContainer';
 import MusicNote1 from '../assets/images/1musicnote.png';
 import MusicNote2 from '../assets/images/2musicnote.png';
-import MusicNote3 from '../assets/images/3musicnote.png'; // Add new music note images
+import MusicNote3 from '../assets/images/3musicnote.png';
 import MusicNote4 from '../assets/images/4musicnote.png';
 import MusicNote5 from '../assets/images/5musicnote.png';
 import HobbyPopup from '../components/HobbyPopup';
 import hobbies from './AccessHobbies.jsx';
 import EmptyPopup from '../components/EmptyPopup.jsx';
 
+const shuffleArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
+
 const HobbyGame = () => {
-  const [position, setPosition] = useState([
-    { top: 0, left: 0 },
-    { top: 0, left: 0 },
-    { top: 0, left: 0 },
-    { top: 0, left: 0 },
-    { top: 0, left: 0 }
-  ]);
-  const [visible, setVisible] = useState([true, true, true, true, true]);
+  const [position, setPosition] = useState(Array(5).fill({ top: 0, left: 0 }));
+  const [visible, setVisible] = useState(Array(5).fill(true));
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [currentHobbyIdx, setCurrentHobbyIdx] = useState(0);
   const [score, setScore] = useState(0);
-  const [randomHobbyIdx, setRandomHobbyIdx] = useState([0, 0, 0, 0, 0]);
+  const [randomHobbyIdx, setRandomHobbyIdx] = useState([]);
   const [clickedHobbies, setClickedHobbies] = useState(new Set());
   const [emptyPopupIdx, setEmptyPopupIdx] = useState(null);
 
   useEffect(() => {
     const randomizePositions = () => {
       const newPositions = position.map(() => ({
-        top: Math.random() * (window.innerHeight - 200), // Subtracting image height
-        left: Math.random() * (window.innerWidth - 100) // Subtracting image width
+        top: Math.random() * (window.innerHeight - 200),
+        left: Math.random() * (window.innerWidth - 100)
       }));
       setPosition(newPositions);
     };
@@ -44,16 +46,15 @@ const HobbyGame = () => {
     const interval = setInterval(() => {
       randomizePositions();
       randomizeVisibility();
-    }, 2000); // Change position and visibility every 2 seconds
+    }, 2000);
 
     return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
-    // Randomize the hobby index for each music note when the component mounts
-    const randomIndices = Array.from({ length: 5 }, () => Math.floor(Math.random() * hobbies.length));
-    setRandomHobbyIdx(randomIndices);
-    // Randomly select one music note to display the empty popup
+    const shuffledHobbies = shuffleArray([...hobbies]);
+    const selectedHobbies = shuffledHobbies.slice(0, 5).map((hobby, index) => index);
+    setRandomHobbyIdx(selectedHobbies);
     setEmptyPopupIdx(Math.floor(Math.random() * 5));
   }, []);
 
@@ -67,7 +68,7 @@ const HobbyGame = () => {
     }
 
     const hobbyIdx = randomHobbyIdx[noteIndex];
-    if(!clickedHobbies.has(hobbyIdx)) {
+    if (!clickedHobbies.has(hobbyIdx)) {
       setScore(score + 1);
       setClickedHobbies(new Set(clickedHobbies.add(hobbyIdx)));
     }
