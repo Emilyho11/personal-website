@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import ContentContainer from '../components/ContentContainer';
-import MusicNote1 from '../assets/images/1musicnote.png';
-import MusicNote2 from '../assets/images/2musicnote.png';
-import MusicNote3 from '../assets/images/3musicnote.png';
-import MusicNote4 from '../assets/images/4musicnote.png';
-import MusicNote5 from '../assets/images/5musicnote.png';
+import MusicNote1 from '../assets/images/music_notes/1musicnote.png';
+import MusicNote2 from '../assets/images/music_notes/2musicnote.png';
+import MusicNote3 from '../assets/images/music_notes/3musicnote.png';
+import MusicNote4 from '../assets/images/music_notes/4musicnote.png';
+import MusicNote5 from '../assets/images/music_notes/5musicnote.png';
+import MusicNote6 from '../assets/images/music_notes/6musicnote.png';
 import HobbyPopup from '../components/HobbyPopup';
 import hobbies from './AccessHobbies.jsx';
 import EmptyPopup from '../components/EmptyPopup.jsx';
@@ -17,9 +18,24 @@ const shuffleArray = (array) => {
   return array;
 };
 
+const MusicNoteButton = ({ noteIndex, position, visible, handleNoteClick }) => {
+  const musicNotes = [MusicNote1, MusicNote2, MusicNote3, MusicNote4, MusicNote5, MusicNote6];
+  if (!visible) return null;
+
+  return (
+    <button
+      onClick={() => handleNoteClick(noteIndex)}
+      className="focus:outline-none absolute"
+      style={{ top: `${position.top}px`, left: `${position.left}px`, transition: 'top 1s, left 1s' }}
+    >
+      <img src={musicNotes[noteIndex]} alt="button image" className="w-1/12 h-full object-cover animate-fade-out"></img>
+    </button>
+  );
+};
+
 const HobbyGame = () => {
-  const [position, setPosition] = useState(Array(5).fill({ top: 0, left: 0 }));
-  const [visible, setVisible] = useState(Array(5).fill(true));
+  const [position, setPosition] = useState(Array(6).fill({ top: 0, left: 0 }));
+  const [visible, setVisible] = useState(Array(6).fill(true));
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [currentHobbyIdx, setCurrentHobbyIdx] = useState(0);
   const [score, setScore] = useState(0);
@@ -53,9 +69,9 @@ const HobbyGame = () => {
 
   useEffect(() => {
     const shuffledHobbies = shuffleArray([...hobbies]);
-    const selectedHobbies = shuffledHobbies.slice(0, 5).map((hobby, index) => index);
+    const selectedHobbies = shuffledHobbies.slice(0, 6).map((hobby, index) => index);
     setRandomHobbyIdx(selectedHobbies);
-    setEmptyPopupIdx(Math.floor(Math.random() * 5));
+    setEmptyPopupIdx(Math.floor(Math.random() * 6));
   }, []);
 
   const handleNoteClick = (noteIndex) => {
@@ -90,55 +106,15 @@ const HobbyGame = () => {
         <h3>Try to catch as many music notes as you can to see all my hobbies and extracurricular activities!</h3>
       </div>
 
-      {visible[0] && (
-        <button
-          onClick={() => handleNoteClick(0)}
-          className="focus:outline-none absolute"
-          style={{ top: `${position[0].top}px`, left: `${position[0].left}px`, transition: 'top 1s, left 1s' }}
-        >
-          <img src={MusicNote1} alt="button image" className="w-10 h-full object-cover animate-fade-out"></img>
-        </button>
-      )}
-
-      {visible[1] && (
-        <button
-          onClick={() => handleNoteClick(1)}
-          className="focus:outline-none absolute"
-          style={{ top: `${position[1].top}px`, left: `${position[1].left}px`, transition: 'top 1s, left 1s' }}
-        >
-          <img src={MusicNote2} alt="button image" className="w-1/12 h-full object-cover animate-fade-out"></img>
-        </button>
-      )}
-
-      {visible[2] && (
-        <button
-          onClick={() => handleNoteClick(2)}
-          className="focus:outline-none absolute"
-          style={{ top: `${position[2].top}px`, left: `${position[2].left}px`, transition: 'top 1s, left 1s' }}
-        >
-          <img src={MusicNote3} alt="button image" className="w-1/12 h-full object-cover animate-fade-out"></img>
-        </button>
-      )}
-
-      {visible[3] && (
-        <button
-          onClick={() => handleNoteClick(3)}
-          className="focus:outline-none absolute"
-          style={{ top: `${position[3].top}px`, left: `${position[3].left}px`, transition: 'top 1s, left 1s' }}
-        >
-          <img src={MusicNote4} alt="button image" className="w-1/12 h-full object-cover animate-fade-out"></img>
-        </button>
-      )}
-
-      {visible[4] && (
-        <button
-          onClick={() => handleNoteClick(4)}
-          className="focus:outline-none absolute"
-          style={{ top: `${position[4].top}px`, left: `${position[4].left}px`, transition: 'top 1s, left 1s' }}
-        >
-          <img src={MusicNote5} alt="button image" className="w-1/12 h-full object-cover animate-fade-out"></img>
-        </button>
-      )}
+      {position.map((pos, index) => (
+        <MusicNoteButton
+          key={index}
+          noteIndex={index}
+          position={pos}
+          visible={visible[index]}
+          handleNoteClick={handleNoteClick}
+        />
+      ))}
 
       {isPopupOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
