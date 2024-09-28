@@ -41,17 +41,16 @@ const ProjectModal = ( { isVisible, onClose, project } ) => {
                 </div>
                 <div className='px-20 py-10'>
                     {/* <h3 className='text-xl font-bold tracking-wider'>Date:</h3> */}
-                    <p className='text-md pb-8'>Date: {project.date}</p>
-                    <h3 className='text-xl font-bold tracking-wider'>Tech Stack:</h3>
-                    <p className='my-2 pl-4 text-md'>{project.techStack}</p>
+                    <h3 className='text-xl font-bold tracking-wider pb-6'>Tech Stack: {project.techStack}</h3>
                     <h3 className='text-xl font-bold tracking-wider'>Description:</h3>
+                    <p className='my-4 pl-4 text-md'>Date: {project.date}</p>
                     <p className='my-2 pl-4 text-md'>{project.overallDescription}</p>
                     <button onClick={toggleShowMoreDetails} className='mt-2 text-blue-700 hover:text-blue-400 underline block'>
                         {showMoreDetails ? 'Show Less' : 'More Details'}
                         <FontAwesomeIcon icon={showMoreDetails ? faChevronUp : faChevronDown} className='ml-2 text-lg' />
                     </button>
                     {showMoreDetails && (
-                    <div className='mt-2'>
+                        <div className='mt-2'>
                         <ul className='list-disc pl-5'>
                         {project.description.map((desc, i) => (
                             <li key={i}>{desc}</li>

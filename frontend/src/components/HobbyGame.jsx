@@ -9,6 +9,7 @@ import MusicNote6 from '../assets/images/music_notes/6musicnote.png';
 import HobbyPopup from '../components/HobbyPopup';
 import hobbies from './AccessHobbies.jsx';
 import EmptyPopup from '../components/EmptyPopup.jsx';
+import BackgroundNotes from '../assets/images/music_bg.png';
 
 const shuffleArray = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
