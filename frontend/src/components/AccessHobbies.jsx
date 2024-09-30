@@ -11,6 +11,7 @@ import SkateBoarding from '../assets/images/hobbies/skateboarding.jpg';
 import Saxophone from '../assets/images/hobbies/saxophone.jpg';
 import AthleticsCouncil from '../assets/images/hobbies/BHAA.jpg';
 import MusicCouncil from '../assets/images/hobbies/bhss_music_council.jpg';
+import CommunityOutreach from '../assets/images/hobbies/community_outreach.jpg';
 
 const hobbies = [
     {
@@ -100,6 +101,12 @@ const hobbies = [
         description: 'Joined the Music Council at my High School and planned music concerts and socials for band and for music students.',
         date: '2017-2018',
         image: [MusicCouncil]
+    },
+    {
+        hobbyName: 'Community Outreach Club',
+        description: 'Joined the Community Outreach Committee, organizing and helping around the community.',
+        date: '2019-2020',
+        image: [CommunityOutreach]
     }
 ]
 

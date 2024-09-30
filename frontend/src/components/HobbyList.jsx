@@ -13,7 +13,7 @@ export const HobbyList = () => {
 
   return (
     <div className='flex flex-col items-center justify-center min-h-screen'>
-      <h1 className='text-4xl text-center mb-10'>My Hobbies</h1>
+      <h1 className='text-4xl text-center mb-6'>My Hobbies</h1>
       <div className='xl:grid xl:grid-cols-2 gap-10 mb-40'>
         {hobbies.map((hobby, index) => (
           <div key={index} className='bg-dark_blue p-6 text-back_light_blue rounded shadow mb-4 xl:mb-0 md:w-[400px] md:h-[350px] 2xl:w-[650px] 2xl:h-[350px] overflow-y-auto'>
