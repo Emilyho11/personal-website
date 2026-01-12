@@ -20,7 +20,7 @@ const ProjectModal = ( { isVisible, onClose, project } ) => {
 
     return (
         <div onClick={handleOverlayClick} className='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50'>
-            <div className='relative bg-white rounded-lg w-2/3 h-3/4 overflow-y-auto'>
+            <div className='relative bg-white rounded-lg lg:w-2/3 lg:h-3/4 overflow-y-auto'>
                 <button onClick={onClose} className='absolute top-2 right-2 text-red-500 hover:text-red-300'>
                     <FontAwesomeIcon icon={faTimes} size="xl"/>
                 </button>   

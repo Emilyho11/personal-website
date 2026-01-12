@@ -23,7 +23,7 @@ const ContactMe = () => {
                     {field.field}
                     {field.required && <span className='text-red-500'> *</span>}
                   </label>
-                  <input type='text' id={field.value} name={field.value} className='w-full p-2' required={field.required}/>
+                  <input type='text' id={field.value} name={field.value} className='w-full p-2 bg-white border border-gray rounded' required={field.required}/>
                 </div>
               ))}
             </div>
@@ -34,7 +34,7 @@ const ContactMe = () => {
                   <span className='text-red-500'> *</span>
                 )}
               </label>
-              <textarea id='message' name='message' className='w-full p-2 h-32' required={fields.find(field => field.value === 'message').required}></textarea>
+              <textarea id='message' name='message' className='w-full p-2 h-32 bg-white border border-gray rounded' required={fields.find(field => field.value === 'message').required}></textarea>
             </div>
             <button type='submit' className='bg-dark_blue text-back_light_blue p-2 mt-5'>Submit</button>
           </form>

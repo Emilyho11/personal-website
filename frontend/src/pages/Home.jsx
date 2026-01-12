@@ -115,29 +115,43 @@ const Home = () => {
           <hr className="my-10 border-t-1 border-black" />
           <h3>Relevant Courses</h3>
           <ul className="list-disc pl-5 pt-5">
-            <li>Introduction to Computer Science 1 & 2</li>
-            <li>Engineering Large Software Systems</li>
-            <li>Software Engineering</li>
-            <li>Software Design</li>
-            <li>Operating Systems</li>
-            <li>Databases</li>
-            <li>Software Tools and Systems Programming</li>
+            <li>Algorithm Design and Analysis</li>
+            <li>Calculus 1 & 2</li>
             <li>Computer Organization</li>
-            <li>Human-Computer Interaction</li>
+            <li>Computer Science 1 & 2</li>
+            <li>Computer and Network Security</li>
+            <li>Databases</li>
             <li>Design and Analysis of Data Structures</li>
-            <li>Theory of Computation</li>
+            <li>Discrete Mathematics</li>
+            <li>Engineering Large Software Systems</li>
+            <li>Human-Computer Interaction</li>
+            <li>Linear Algebra 1 & 2</li>
+            <li>Managing People and Groups in Organizations</li>
+            <li>Multivariable Calculus</li>
             <li>Numerical Algorithms for Computational Mathematics</li>
+            <li>Operating Systems</li>
+            <li>Programming on the Web</li>
+            <li>Software Design</li>
+            <li>Software Engineering</li>
+            <li>Software Tools and Systems Programming</li>
+            <li>Theory of Computation</li>
             <li>Business Ethics</li>
             <li>Business French</li>
           </ul>
           <hr className="my-10 border-t-1 border-black" />
           <h3>Skills</h3>
           <h4 className='pt-5'>Programming Languages:</h4>
-          <p>Python, Java, C, SQL, HTML, CSS, JavaScript, Linux</p>
-          <h4 className='pt-5'>Tools, Frameworks, Databases:</h4>
-          <p>GitHub, GCP, MS Azure, Terraform, Docker, JIRA, SpringBoot, React.js, Node.js, MongoDB, MS SQL Server</p>
-          <h4 className='pt-5'>Development Practices:</h4>
-          <p>Agile Software Development (Scrum), CI/CD, REST APIs, Application Security</p>
+          <p>Python, Java, C, C++, Ruby, JavaScript, TypeScript, SQL, Bash, HTML, CSS, Assembly</p>
+          <h4 className='pt-5'>Frameworks, Libraries, APIs:</h4>
+          <p>React.js, Node.js, Express.js, Spring Boot, Flask, Prisma ORM, REST APIs, WebRTC</p>
+          <h4 className='pt-5'>Databases & Data Technologies:</h4>
+          <p>PostgreSQL, MongoDB, Redis, Microsoft SQL Server</p>
+          <h4 className='pt-5'>Tools & Platforms:</h4>
+          <p>Linux, GitHub, Jira, Figma, Android Studio, Visual Studio, Microsoft Excel</p>
+          <h4 className='pt-5'>Cloud, DevOps & Infrastructure:</h4>
+          <p>Amazon Web Services (AWS), Google Cloud Platform (GCP), Microsoft Azure, Terraform, Docker, GitHub Actions, GitOps, CI/CD, Amazon EKS, Azure Kubernetes Service (AKS), Deployment</p>
+          <h4 className='pt-5'>Software Engineering Practices:</h4>
+          <p>Microservices, Object-Oriented Programming (OOP), Software Design Patterns, Model-View-Presenter (MVP), Agile Software Development (Scrum), Version Control, Application Security, Web Scraping, Monitoring (Datadog)</p>
           <h4 className='pt-5'>Soft Skills:</h4>
           <p>Communication, Teamwork, Collaboration, Organization, Fast Learner, Problem-solving, Attention to detail</p>
           <h4 className='pt-5'>Languages:</h4>
